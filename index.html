@@ -51,37 +51,31 @@
     .banner .pill { font-size: 0.68rem; font-weight: 700; color: var(--navy); background: rgba(12,21,83,0.14); padding: 3px 10px; border-radius: 4px; letter-spacing: 0.04em; }
 
     /* ── HERO ── */
-    #hero { background: var(--navy); padding: 96px 60px 88px; position: relative; overflow: hidden; }
-    #hero::after {
-      content: ''; position: absolute;
-      width: 700px; height: 700px;
-      background: radial-gradient(circle, rgba(110,211,196,0.09) 0%, transparent 65%);
-      top: -200px; right: -100px; pointer-events: none;
+    #hero { background: var(--navy); padding: 100px 60px 96px; position: relative; overflow: hidden; text-align: center; }
+    #hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 90% 70% at 50% -20%, rgba(110,211,196,0.11) 0%, transparent 60%);
+      pointer-events: none;
     }
-    .teal-bar { position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--teal), rgba(110,211,196,0.3)); }
-    .hero-inner { max-width: 1020px; margin: 0 auto; display: grid; grid-template-columns: 1fr 360px; gap: 72px; align-items: start; position: relative; z-index: 1; }
-    .hero-eye { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--teal); margin-bottom: 18px; display: flex; align-items: center; gap: 8px; }
-    .hero-eye::before { content: ''; display: block; width: 24px; height: 2px; background: var(--teal); flex-shrink: 0; }
-    #hero h1 { font-size: 2.9rem; font-weight: 900; color: #fff; line-height: 1.1; margin-bottom: 22px; letter-spacing: -0.5px; }
+    .teal-bar { position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, transparent, var(--teal), transparent); }
+    .hero-inner { max-width: 780px; margin: 0 auto; position: relative; z-index: 1; }
+    .hero-eye { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--teal); margin-bottom: 24px; display: inline-flex; align-items: center; gap: 10px; background: rgba(110,211,196,0.1); border: 1px solid rgba(110,211,196,0.2); padding: 6px 16px; border-radius: 100px; }
+    #hero h1 { font-size: 3.2rem; font-weight: 900; color: #fff; line-height: 1.1; margin-bottom: 24px; letter-spacing: -0.6px; }
     #hero h1 em { font-style: normal; color: var(--teal); }
-    #hero .sub { font-size: 1.02rem; color: rgba(255,255,255,0.52); line-height: 1.82; margin-bottom: 36px; }
+    #hero .sub { font-size: 1.05rem; color: rgba(255,255,255,0.52); line-height: 1.82; margin-bottom: 48px; max-width: 620px; margin-left: auto; margin-right: auto; }
     .what-this-is {
-      background: rgba(110,211,196,0.07); border: 1px solid rgba(110,211,196,0.2);
-      border-radius: 10px; padding: 22px 24px;
+      background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 14px; padding: 28px 36px; text-align: left; margin-bottom: 0;
     }
-    .what-this-is .label { font-size: 0.62rem; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: var(--teal); margin-bottom: 10px; display: block; }
-    .what-this-is p { font-size: 0.875rem; color: rgba(255,255,255,0.62); line-height: 1.72; }
-    .what-this-is p + p { margin-top: 8px; }
-    .mission-voice {
-      background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.09);
-      border-radius: 10px; padding: 28px 24px;
+    .what-this-is .label { font-size: 0.62rem; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: var(--teal); margin-bottom: 12px; display: block; }
+    .what-this-is-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+    .what-this-is p { font-size: 0.875rem; color: rgba(255,255,255,0.58); line-height: 1.75; }
+    .mission-strip {
+      border-top: 1px solid rgba(255,255,255,0.08); margin-top: 48px; padding-top: 32px;
+      display: flex; align-items: flex-start; gap: 20px; text-align: left;
     }
-    .mission-voice p { font-size: 0.9rem; color: rgba(255,255,255,0.58); line-height: 1.78; font-style: italic; }
-    .pull-quote-placeholder {
-      background: rgba(255,255,255,0.03); border: 1px dashed rgba(110,211,196,0.22);
-      border-radius: 10px; padding: 20px 24px; margin-top: 12px; text-align: center;
-    }
-    .pull-quote-placeholder p { font-size: 0.78rem; color: rgba(255,255,255,0.25); font-style: italic; line-height: 1.6; }
+    .mission-strip-bar { width: 3px; flex-shrink: 0; background: var(--teal); border-radius: 2px; align-self: stretch; min-height: 44px; }
+    .mission-strip p { font-size: 0.88rem; color: rgba(255,255,255,0.48); line-height: 1.78; font-style: italic; }
 
     /* ── GLOBAL SECTION ── */
     .section-wrap { max-width: 1020px; margin: 0 auto; padding: 88px 60px; }
@@ -269,23 +263,21 @@
 <section id="hero">
   <div class="teal-bar"></div>
   <div class="hero-inner">
-    <div>
-      <span class="hero-eye">Cash Compass by Ned</span>
-      <h1>Your business owners need real financial clarity.<br><em>Now you have something to give them.</em></h1>
-      <p class="sub">Cash Compass is a ready-to-deploy bundle of technology and resources that gives small business owners immediate visibility into their finances, a plain-language picture of what's working and what isn't, and a personalized action plan to move forward — in under two hours, with no financial background required.</p>
-      <div class="what-this-is">
-        <span class="label">What this is</span>
+    <span class="hero-eye">Cash Compass by Ned</span>
+    <h1>Your business owners need real financial clarity.<br><em>Now you have something to give them.</em></h1>
+    <p class="sub">Cash Compass is a ready-to-deploy bundle of technology and resources that gives small business owners immediate visibility into their finances, a plain-language picture of what's working and what isn't, and a personalized action plan to move forward — in under two hours, with no financial background required.</p>
+
+    <div class="what-this-is">
+      <span class="label">What this is</span>
+      <div class="what-this-is-inner">
         <p>Ned provides the analysis — connecting to bank accounts, organizing transactions, and surfacing financial patterns. Cash Compass provides the interpretation and the path forward: a web-based field guide that explains every metric in plain language, what it means for that specific business, and what to do about it.</p>
         <p>Partner organizations bring it to the business owners they already serve. No financial expertise required on your end. The guide does that work.</p>
       </div>
     </div>
-    <div>
-      <div class="mission-voice">
-        <p>"We built Ned because the tools for understanding your own business have always existed for companies with finance teams — and almost never for the owner running a restaurant or cleaning service on their own. Cash Compass is how we fix that at scale."</p>
-      </div>
-      <div class="pull-quote-placeholder" style="margin-top:16px;">
-        <p>Partner voice coming soon — if you're a CDFI TA lead or SBDC director and want to share your experience, we'd like to hear from you.</p>
-      </div>
+
+    <div class="mission-strip">
+      <div class="mission-strip-bar"></div>
+      <p>"We built Ned because the tools for understanding your own business have always existed for companies with finance teams — and almost never for the owner running a restaurant or cleaning service on their own. Cash Compass is how we fix that at scale."</p>
     </div>
   </div>
 </section>
