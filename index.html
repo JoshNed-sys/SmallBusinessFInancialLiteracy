@@ -18,648 +18,701 @@
       --muted: #6b7280;
       --dark:  #374151;
       --navy3: #8892b8;
+      --teal-dark: #3aab9c;
     }
 
     html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #fff;
-      color: var(--navy);
-    }
+    body { font-family: 'Inter', sans-serif; background: #fff; color: var(--navy); }
 
     /* ── NAV ── */
     nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
+      position: sticky; top: 0; z-index: 100;
       background: var(--navy);
       padding: 0 48px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      display: flex; align-items: center; justify-content: space-between;
       height: 56px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.2);
     }
-
-    .nav-logo {
-      font-size: 1.5rem;
-      font-weight: 900;
-      color: #fff;
-      letter-spacing: -0.5px;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 6px;
-    }
-
+    .nav-logo { font-size: 1.5rem; font-weight: 900; color: #fff; }
+    .nav-links { display: flex; gap: 4px; }
     .nav-links a {
-      text-decoration: none;
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.55);
-      padding: 6px 14px;
-      border-radius: 100px;
-      transition: all 0.2s;
+      text-decoration: none; font-size: 0.75rem; font-weight: 700;
+      letter-spacing: 0.07em; text-transform: uppercase;
+      color: rgba(255,255,255,0.5); padding: 6px 12px;
+      border-radius: 100px; transition: all 0.2s;
     }
+    .nav-links a:hover, .nav-links a.active { color: var(--navy); background: var(--teal); }
 
-    .nav-links a:hover,
-    .nav-links a.active {
-      color: var(--navy);
+    /* ── PARTNER BANNER ── */
+    .partner-banner {
       background: var(--teal);
+      padding: 11px 48px;
+      display: flex; align-items: center; justify-content: center; gap: 12px;
+    }
+    .partner-banner p {
+      font-size: 0.82rem; font-weight: 700; color: var(--navy);
+      letter-spacing: 0.01em;
+    }
+    .partner-banner span {
+      font-size: 0.75rem; font-weight: 600; color: var(--navy);
+      background: rgba(12,21,83,0.12); padding: 3px 10px; border-radius: 100px;
     }
 
     /* ── HERO ── */
     #cover {
-      background: var(--navy);
-      padding: 96px 48px 80px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
+      background: var(--navy); padding: 88px 48px 80px;
+      text-align: center; position: relative; overflow: hidden;
     }
-
     #cover::before {
-      content: '';
-      position: absolute;
-      inset: 0;
+      content: ''; position: absolute; inset: 0;
       background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(110,211,196,0.13) 0%, transparent 70%);
       pointer-events: none;
     }
-
-    .teal-bar {
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 5px;
-      background: var(--teal);
-    }
-
+    .teal-bar { position: absolute; top: 0; left: 0; right: 0; height: 5px; background: var(--teal); }
     .eyebrow {
-      display: inline-block;
-      font-size: 0.72rem;
-      font-weight: 800;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--teal);
-      margin-bottom: 20px;
+      display: inline-block; font-size: 0.72rem; font-weight: 800;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--teal); margin-bottom: 20px;
     }
-
     #cover h1 {
-      font-size: 3.4rem;
-      font-weight: 900;
-      color: #fff;
-      line-height: 1.12;
-      max-width: 700px;
-      margin: 0 auto 12px;
+      font-size: 3.4rem; font-weight: 900; color: #fff;
+      line-height: 1.12; max-width: 700px; margin: 0 auto 14px;
     }
-
-    #cover h1 em {
-      font-style: normal;
-      color: var(--teal);
-    }
-
-    #cover .subhead {
-      font-size: 1.05rem;
-      color: rgba(255,255,255,0.55);
-      max-width: 520px;
-      margin: 0 auto 52px;
-      line-height: 1.7;
+    #cover h1 em { font-style: normal; color: var(--teal); }
+    .subhead {
+      font-size: 1.05rem; color: rgba(255,255,255,0.55);
+      max-width: 540px; margin: 0 auto 48px; line-height: 1.75;
     }
 
     /* Overview cards */
     .overview-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      max-width: 900px;
-      margin: 0 auto;
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 14px; max-width: 860px; margin: 0 auto;
     }
-
     .ov-card {
       background: rgba(255,255,255,0.05);
       border: 1px solid rgba(110,211,196,0.2);
-      border-radius: 14px;
-      padding: 28px 24px;
-      text-align: left;
-      border-top: 4px solid var(--teal);
-      text-decoration: none;
-      transition: background 0.2s;
+      border-radius: 14px; padding: 26px 22px; text-align: left;
+      border-top: 4px solid var(--teal); text-decoration: none; transition: background 0.2s;
     }
-
     .ov-card:hover { background: rgba(255,255,255,0.09); }
+    .ov-phase { font-size: 0.68rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); margin-bottom: 8px; }
+    .ov-title { font-size: 1.5rem; font-weight: 900; color: #fff; margin-bottom: 8px; }
+    .ov-desc  { font-size: 0.86rem; color: rgba(255,255,255,0.5); line-height: 1.6; }
 
-    .ov-phase {
-      font-size: 0.68rem;
-      font-weight: 800;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--teal);
-      margin-bottom: 8px;
+    /* ── PARTNER FEATURE SECTION ── */
+    #partners {
+      background: var(--navy2);
+      padding: 64px 48px;
+      text-align: center;
+    }
+    .partner-eye {
+      font-size: 0.72rem; font-weight: 800; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--teal); margin-bottom: 14px;
+    }
+    #partners h2 {
+      font-size: 2rem; font-weight: 900; color: #fff;
+      max-width: 620px; margin: 0 auto 16px; line-height: 1.25;
+    }
+    #partners > .partner-sub {
+      font-size: 1rem; color: var(--navy3); max-width: 580px;
+      margin: 0 auto 48px; line-height: 1.75;
+    }
+    .partner-cards {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 16px; max-width: 860px; margin: 0 auto 48px;
+    }
+    .partner-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(110,211,196,0.15);
+      border-radius: 14px; padding: 28px 24px; text-align: left;
+    }
+    .partner-card-icon {
+      width: 40px; height: 40px; background: var(--teal);
+      border-radius: 10px; display: flex; align-items: center;
+      justify-content: center; margin-bottom: 16px;
+    }
+    .partner-card-icon svg { width: 20px; height: 20px; fill: var(--navy); }
+    .partner-card h4 { font-size: 0.95rem; font-weight: 700; color: #fff; margin-bottom: 8px; }
+    .partner-card p  { font-size: 0.85rem; color: var(--navy3); line-height: 1.6; }
+
+    .partner-logos-label {
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 20px;
+    }
+    .partner-logos {
+      display: flex; align-items: center; justify-content: center;
+      gap: 32px; flex-wrap: wrap;
+    }
+    .partner-logo-pill {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px; padding: 10px 22px;
+      font-size: 0.85rem; font-weight: 700; color: rgba(255,255,255,0.4);
+      letter-spacing: 0.03em;
     }
 
-    .ov-title {
-      font-size: 1.5rem;
-      font-weight: 900;
-      color: #fff;
-      margin-bottom: 10px;
+    /* ── PROBLEM/SOLUTION ── */
+    #problem {
+      padding: 80px 48px; max-width: 960px; margin: 0 auto;
     }
-
-    .ov-desc {
-      font-size: 0.88rem;
-      color: rgba(255,255,255,0.5);
-      line-height: 1.6;
+    .ps-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 36px;
     }
-
-    /* ── SECTION SHARED ── */
-    .section {
-      padding: 80px 48px;
-      max-width: 960px;
-      margin: 0 auto;
+    .ps-card {
+      border-radius: 14px; padding: 32px 28px;
     }
-
-    .phase-header {
-      display: flex;
-      align-items: flex-end;
-      gap: 16px;
-      margin-bottom: 8px;
+    .ps-card.problem { background: #fff5f5; border: 1px solid #fecaca; }
+    .ps-card.solution { background: var(--teal2); border: 1px solid rgba(110,211,196,0.4); }
+    .ps-label {
+      font-size: 0.7rem; font-weight: 800; letter-spacing: 0.12em;
+      text-transform: uppercase; margin-bottom: 14px; display: block;
     }
+    .ps-card.problem .ps-label { color: #dc2626; }
+    .ps-card.solution .ps-label { color: var(--teal-dark); }
+    .ps-card h3 { font-size: 1.15rem; font-weight: 800; color: var(--navy); margin-bottom: 16px; }
+    .ps-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .ps-list li { font-size: 0.9rem; line-height: 1.55; display: flex; align-items: flex-start; gap: 10px; }
+    .ps-card.problem .ps-list li { color: #7f1d1d; }
+    .ps-card.solution .ps-list li { color: var(--dark); }
+    .ps-card.problem .ps-list li::before { content: '—'; color: #dc2626; font-weight: 700; margin-top: 1px; flex-shrink: 0; }
+    .ps-card.solution .ps-list li::before { content: ''; width: 7px; height: 7px; background: var(--teal); border-radius: 50%; margin-top: 5px; flex-shrink: 0; }
 
+    /* ── FOR WHO ── */
+    #for-who { background: var(--light); padding: 72px 48px; }
+    .for-who-inner { max-width: 960px; margin: 0 auto; }
+    #for-who .section-eye { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; color: var(--teal-dark); margin-bottom: 12px; }
+    #for-who h2 { font-size: 2rem; font-weight: 900; color: var(--navy); margin-bottom: 8px; }
+    #for-who .sub { font-size: 1rem; color: var(--muted); max-width: 560px; line-height: 1.7; margin-bottom: 36px; }
+    .who-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .who-card {
+      background: #fff; border-radius: 12px; padding: 24px 22px;
+      border-top: 3px solid var(--teal);
+      box-shadow: 0 1px 4px rgba(12,21,83,0.06);
+    }
+    .who-card h4 { font-size: 0.95rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+    .who-card p  { font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
+
+    /* ── SHARED SECTION ── */
+    .section { padding: 80px 48px; max-width: 960px; margin: 0 auto; }
+    .phase-header { display: flex; align-items: flex-end; gap: 14px; margin-bottom: 6px; }
     .phase-pill {
-      font-size: 0.68rem;
-      font-weight: 800;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      background: var(--navy);
-      color: var(--teal);
-      padding: 5px 12px;
-      border-radius: 100px;
-      white-space: nowrap;
-      flex-shrink: 0;
-      margin-bottom: 6px;
+      font-size: 0.68rem; font-weight: 800; letter-spacing: 0.12em;
+      text-transform: uppercase; background: var(--navy); color: var(--teal);
+      padding: 5px 12px; border-radius: 100px; white-space: nowrap;
+      flex-shrink: 0; margin-bottom: 5px;
     }
-
-    .phase-title {
-      font-size: 3rem;
-      font-weight: 900;
-      color: var(--navy);
-      line-height: 1;
-    }
-
-    .phase-tagline {
-      font-size: 0.95rem;
-      color: var(--muted);
-      margin-bottom: 28px;
-      margin-top: 4px;
-    }
-
-    .section-divider {
-      height: 3px;
-      background: linear-gradient(90deg, var(--teal), transparent);
-      margin-bottom: 28px;
-      border-radius: 2px;
-    }
-
-    .body-text {
-      font-size: 1rem;
-      color: var(--muted);
-      line-height: 1.8;
-      margin-bottom: 28px;
-      max-width: 700px;
-    }
-
-    .sub-heading {
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--navy);
-      margin-bottom: 14px;
-    }
-
-    .bullet-list {
-      list-style: none;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px 32px;
-      margin-bottom: 32px;
-    }
-
-    .bullet-list li {
-      font-size: 0.93rem;
-      color: var(--dark);
-      line-height: 1.55;
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-    }
-
-    .bullet-list li::before {
-      content: '';
-      width: 7px;
-      height: 7px;
-      background: var(--teal);
-      border-radius: 50%;
-      margin-top: 5px;
-      flex-shrink: 0;
-    }
-
-    /* Callout boxes */
-    .callouts {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-      margin-top: 8px;
-    }
-
-    .callout {
-      background: var(--teal2);
-      border-left: 3px solid var(--teal);
-      border-radius: 10px;
-      padding: 16px 18px;
-    }
-
-    .callout h4 {
-      font-size: 0.85rem;
-      font-weight: 700;
-      color: var(--navy);
-      margin-bottom: 6px;
-    }
-
-    .callout p {
-      font-size: 0.82rem;
-      color: var(--muted);
-      line-height: 1.55;
-    }
-
-    /* ── SECTION BG ALTERNATION ── */
+    .phase-title { font-size: 3rem; font-weight: 900; color: var(--navy); line-height: 1; }
+    .phase-tagline { font-size: 0.95rem; color: var(--muted); margin-bottom: 24px; margin-top: 4px; }
+    .section-divider { height: 3px; background: linear-gradient(90deg, var(--teal), transparent); margin-bottom: 24px; border-radius: 2px; }
+    .body-text { font-size: 1rem; color: var(--muted); line-height: 1.8; margin-bottom: 24px; max-width: 700px; }
+    .sub-heading { font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 12px; }
+    .bullet-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 10px 32px; margin-bottom: 28px; }
+    .bullet-list li { font-size: 0.93rem; color: var(--dark); line-height: 1.55; display: flex; align-items: flex-start; gap: 10px; }
+    .bullet-list li::before { content: ''; width: 7px; height: 7px; background: var(--teal); border-radius: 50%; margin-top: 5px; flex-shrink: 0; }
+    .callouts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .callout { background: var(--teal2); border-left: 3px solid var(--teal); border-radius: 10px; padding: 16px 18px; }
+    .callout h4 { font-size: 0.85rem; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+    .callout p  { font-size: 0.82rem; color: var(--muted); line-height: 1.55; }
     .bg-white { background: #fff; }
     .bg-light  { background: var(--light); }
 
+    /* ── OUTCOMES ── */
+    .outcomes-box {
+      background: var(--navy); border-radius: 16px;
+      padding: 32px 36px; margin-top: 32px;
+    }
+    .outcomes-eye { font-size: 0.68rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); margin-bottom: 12px; }
+    .outcomes-box h3 { font-size: 1.1rem; font-weight: 800; color: #fff; margin-bottom: 20px; }
+    .outcomes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .outcome { display: flex; flex-direction: column; gap: 6px; }
+    .outcome-val { font-size: 1.8rem; font-weight: 900; color: var(--teal); line-height: 1; }
+    .outcome-label { font-size: 0.82rem; color: rgba(255,255,255,0.6); line-height: 1.45; }
+
+    /* ── SECURITY ── */
+    .security-strip {
+      background: var(--navy2); border-radius: 12px;
+      padding: 20px 24px; margin-top: 20px;
+      display: flex; align-items: center; gap: 16px;
+    }
+    .security-icon { flex-shrink: 0; }
+    .security-icon svg { width: 28px; height: 28px; fill: var(--teal); }
+    .security-strip p { font-size: 0.85rem; color: var(--navy3); line-height: 1.55; }
+    .security-strip strong { color: #fff; }
+
     /* ── HOW IT WORKS ── */
-    #how {
-      background: var(--navy);
-      padding: 72px 48px;
-    }
-
-    .how-inner {
-      max-width: 960px;
-      margin: 0 auto;
-    }
-
-    .how-eye {
-      font-size: 0.72rem;
-      font-weight: 800;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--teal);
-      margin-bottom: 10px;
-    }
-
-    #how h2 {
-      font-size: 2rem;
-      font-weight: 900;
-      color: #fff;
-      margin-bottom: 40px;
-      max-width: 520px;
-      line-height: 1.25;
-    }
-
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-    }
-
-    .step {
-      background: var(--navy2);
-      border-radius: 12px;
-      padding: 28px 24px;
-      border-top: 3px solid var(--teal);
-    }
-
-    .step-num {
-      width: 34px;
-      height: 34px;
-      background: var(--teal);
-      color: var(--navy);
-      border-radius: 50%;
-      font-size: 0.82rem;
-      font-weight: 800;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 16px;
-    }
-
+    #how { background: var(--navy); padding: 72px 48px; }
+    .how-inner { max-width: 960px; margin: 0 auto; }
+    .how-eye { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; color: var(--teal); margin-bottom: 10px; }
+    #how h2 { font-size: 2rem; font-weight: 900; color: #fff; margin-bottom: 40px; max-width: 520px; line-height: 1.25; }
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .step { background: var(--navy2); border-radius: 12px; padding: 28px 22px; border-top: 3px solid var(--teal); }
+    .step-num { width: 34px; height: 34px; background: var(--teal); color: var(--navy); border-radius: 50%; font-size: 0.82rem; font-weight: 800; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
     .step h4 { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 10px; }
     .step p  { font-size: 0.88rem; color: var(--navy3); line-height: 1.6; }
 
+    /* ── TESTIMONIALS ── */
+    #testimonials { background: var(--light); padding: 72px 48px; }
+    .test-inner { max-width: 960px; margin: 0 auto; }
+    .test-eye { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; color: var(--teal-dark); margin-bottom: 12px; }
+    #testimonials h2 { font-size: 2rem; font-weight: 900; color: var(--navy); margin-bottom: 36px; }
+    .test-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .test-card { background: #fff; border-radius: 14px; padding: 28px 24px; box-shadow: 0 1px 4px rgba(12,21,83,0.07); position: relative; }
+    .test-card::before { content: '"'; font-size: 4rem; font-weight: 900; color: var(--teal); line-height: 1; position: absolute; top: 14px; right: 22px; opacity: 0.4; }
+    .test-text { font-size: 0.93rem; color: var(--dark); line-height: 1.7; margin-bottom: 20px; font-style: italic; }
+    .test-name { font-size: 0.85rem; font-weight: 700; color: var(--navy); }
+    .test-biz  { font-size: 0.78rem; color: var(--muted); margin-top: 2px; }
+
+    /* ── FAQ ── */
+    #faq { padding: 72px 48px; max-width: 760px; margin: 0 auto; }
+    .faq-eye { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; color: var(--teal-dark); margin-bottom: 12px; }
+    #faq h2 { font-size: 2rem; font-weight: 900; color: var(--navy); margin-bottom: 36px; }
+    .faq-item { border-bottom: 1px solid #e5e7eb; padding: 20px 0; cursor: pointer; }
+    .faq-item:first-of-type { border-top: 1px solid #e5e7eb; }
+    .faq-q { font-size: 0.97rem; font-weight: 700; color: var(--navy); display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+    .faq-q .chevron { font-size: 1.1rem; color: var(--teal); transition: transform 0.2s; flex-shrink: 0; }
+    .faq-a { font-size: 0.9rem; color: var(--muted); line-height: 1.7; margin-top: 12px; display: none; }
+    .faq-item.open .faq-a { display: block; }
+    .faq-item.open .chevron { transform: rotate(180deg); }
+
     /* ── CTA ── */
-    #cta {
-      padding: 80px 48px;
-      text-align: center;
-      background: var(--teal2);
+    #cta { padding: 80px 48px; background: var(--navy); text-align: center; }
+    .cta-eye { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; color: var(--teal); margin-bottom: 14px; }
+    #cta h2 { font-size: 2.2rem; font-weight: 900; color: #fff; margin-bottom: 12px; }
+    #cta p { font-size: 1rem; color: var(--navy3); max-width: 480px; margin: 0 auto 32px; line-height: 1.7; }
+    .email-form { display: flex; gap: 10px; max-width: 440px; margin: 0 auto 16px; }
+    .email-form input {
+      flex: 1; padding: 14px 18px; border-radius: 100px; border: none;
+      background: rgba(255,255,255,0.1); color: #fff;
+      font-size: 0.9rem; font-family: inherit;
+      outline: none; border: 1px solid rgba(255,255,255,0.15);
     }
-
-    #cta .eye {
-      font-size: 0.72rem;
-      font-weight: 800;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--teal);
-      margin-bottom: 14px;
-      /* teal on light bg is too light — darken */
-      color: #3aab9c;
-    }
-
-    #cta h2 {
-      font-size: 2.2rem;
-      font-weight: 900;
-      color: var(--navy);
-      margin-bottom: 14px;
-    }
-
-    #cta p {
-      font-size: 1rem;
-      color: var(--muted);
-      max-width: 480px;
-      margin: 0 auto 36px;
-      line-height: 1.7;
-    }
-
+    .email-form input::placeholder { color: rgba(255,255,255,0.35); }
+    .email-form input:focus { border-color: var(--teal); }
     .btn {
-      display: inline-block;
-      background: var(--navy);
-      color: #fff;
-      font-size: 0.9rem;
-      font-weight: 700;
-      padding: 15px 36px;
-      border-radius: 100px;
-      text-decoration: none;
-      letter-spacing: 0.02em;
+      display: inline-block; background: var(--teal); color: var(--navy);
+      font-size: 0.9rem; font-weight: 800; padding: 14px 28px;
+      border-radius: 100px; text-decoration: none; border: none;
+      cursor: pointer; font-family: inherit; white-space: nowrap;
+      transition: opacity 0.2s;
     }
+    .btn:hover { opacity: 0.9; }
+    .cta-note { font-size: 0.78rem; color: rgba(255,255,255,0.3); }
 
     /* ── FOOTER ── */
-    footer {
-      background: var(--navy);
-      padding: 28px 48px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
+    footer { background: var(--navy2); padding: 28px 48px; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid rgba(255,255,255,0.07); }
     footer .logo { font-size: 1.4rem; font-weight: 900; color: #fff; }
-    footer p { font-size: 0.82rem; color: rgba(255,255,255,0.35); }
+    footer p { font-size: 0.8rem; color: rgba(255,255,255,0.28); }
 
     /* ── RESPONSIVE ── */
-    @media (max-width: 720px) {
-      nav { padding: 0 20px; }
+    @media (max-width: 768px) {
+      nav, .partner-banner { padding: 0 20px; }
       .nav-links { display: none; }
-      #cover { padding: 60px 20px 52px; }
+      #cover { padding: 52px 20px 44px; }
       #cover h1 { font-size: 2.2rem; }
-      .overview-grid { grid-template-columns: 1fr; }
-      .section { padding: 52px 20px; }
+      .overview-grid, .partner-cards, .who-grid, .ps-grid,
+      .test-grid, .steps, .outcomes-grid, .callouts { grid-template-columns: 1fr; }
+      .section, #for-who, #partners, #testimonials, #faq, #how, #cta { padding: 52px 20px; }
       .bullet-list { grid-template-columns: 1fr; }
-      .callouts { grid-template-columns: 1fr; }
-      .steps { grid-template-columns: 1fr; }
-      #how { padding: 52px 20px; }
-      #cta { padding: 52px 20px; }
+      .email-form { flex-direction: column; }
       footer { padding: 24px 20px; flex-direction: column; gap: 8px; text-align: center; }
     }
   </style>
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav>
-    <div class="nav-logo">Ned</div>
-    <div class="nav-links">
-      <a href="#cover">Overview</a>
-      <a href="#audit">Audit</a>
-      <a href="#analyze">Analyze</a>
-      <a href="#execute">Execute</a>
-      <a href="#how">How It Works</a>
-    </div>
-  </nav>
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Ned</div>
+  <div class="nav-links">
+    <a href="#cover">Overview</a>
+    <a href="#partners">Partners</a>
+    <a href="#audit">Audit</a>
+    <a href="#analyze">Analyze</a>
+    <a href="#execute">Execute</a>
+    <a href="#faq">FAQ</a>
+  </div>
+</nav>
 
-  <!-- COVER -->
-  <section id="cover">
-    <div class="teal-bar"></div>
-    <div class="eyebrow">The Ned Financial Curriculum</div>
-    <h1>Take control of your<br>business finances <em>in three steps.</em></h1>
-    <p class="subhead">Ned guides small business owners from financial clarity to confident action. No accounting degree required.</p>
+<!-- PARTNER BANNER -->
+<div class="partner-banner">
+  <p>Ned is delivered through trusted partner organizations — bringing financial education directly to the communities they serve.</p>
+  <span>Learn more</span>
+</div>
 
-    <div class="overview-grid">
-      <a class="ov-card" href="#audit">
-        <div class="ov-phase">Phase 01</div>
-        <div class="ov-title">Audit</div>
-        <div class="ov-desc">Connect your bank accounts and get a full picture of every dollar in and out.</div>
-      </a>
-      <a class="ov-card" href="#analyze">
-        <div class="ov-phase">Phase 02</div>
-        <div class="ov-title">Analyze</div>
-        <div class="ov-desc">Understand your trends, margins, and cash flow with clear visual summaries.</div>
-      </a>
-      <a class="ov-card" href="#execute">
-        <div class="ov-phase">Phase 03</div>
-        <div class="ov-title">Execute</div>
-        <div class="ov-desc">Receive a tailored action plan based on what your data is actually telling you.</div>
-      </a>
-    </div>
-  </section>
+<!-- HERO -->
+<section id="cover">
+  <div class="teal-bar"></div>
+  <div class="eyebrow">The Ned Financial Curriculum</div>
+  <h1>Take control of your<br>business finances <em>in three steps.</em></h1>
+  <p class="subhead">Ned partners with organizations you already trust to bring small business owners a clear path from financial chaos to confident decision-making.</p>
 
-  <!-- AUDIT -->
-  <section id="audit" class="bg-light">
-    <div class="section">
-      <div class="phase-header">
-        <div class="phase-pill">Phase 01</div>
-        <div class="phase-title">Audit</div>
+  <div class="overview-grid">
+    <a class="ov-card" href="#audit">
+      <div class="ov-phase">Phase 01</div>
+      <div class="ov-title">Audit</div>
+      <div class="ov-desc">Connect your bank accounts and get a full picture of every dollar in and out.</div>
+    </a>
+    <a class="ov-card" href="#analyze">
+      <div class="ov-phase">Phase 02</div>
+      <div class="ov-title">Analyze</div>
+      <div class="ov-desc">Understand your trends, margins, and cash flow with plain-language summaries.</div>
+    </a>
+    <a class="ov-card" href="#execute">
+      <div class="ov-phase">Phase 03</div>
+      <div class="ov-title">Execute</div>
+      <div class="ov-desc">Receive a tailored action plan based on what your data is actually telling you.</div>
+    </a>
+  </div>
+</section>
+
+<!-- PARTNERS -->
+<section id="partners">
+  <div class="partner-eye">Built on partnership</div>
+  <h2>Ned doesn't reach small businesses alone — we work through the organizations that already have their trust.</h2>
+  <p class="partner-sub">
+    We partner with CDFIs, small business development centers, chambers of commerce, banks, credit unions, and community organizations to bring Ned's curriculum directly to the entrepreneurs they already serve. If you're a partner, Ned plugs into your existing programs — no heavy lift required.
+  </p>
+
+  <div class="partner-cards">
+    <div class="partner-card">
+      <div class="partner-card-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
       </div>
-      <div class="phase-tagline">Get a complete picture of your finances</div>
-      <div class="section-divider"></div>
-
-      <p class="body-text">
-        The first step is connecting Ned to your business bank accounts. Ned securely pulls
-        your full transaction history and organizes every dollar — showing you exactly where
-        money is coming from and where it's going, automatically and in real time.
-        This financial baseline is the foundation everything else is built on.
-      </p>
-
-      <div class="sub-heading">What's included in your Audit</div>
-      <ul class="bullet-list">
-        <li>Secure, encrypted bank account connection via Ned</li>
-        <li>Automatic categorization of all revenue and expenses</li>
-        <li>Unified view across multiple accounts, cards, and payment methods</li>
-        <li>Up to 24 months of historical transaction import</li>
-        <li>Real-time sync so your data is always current</li>
-        <li>Custom category rules to match how your business operates</li>
-        <li>Duplicate detection and transaction cleaning</li>
-        <li>Instant summary dashboard on completion</li>
-      </ul>
-
-      <div class="callouts">
-        <div class="callout">
-          <h4>Takes less than 10 minutes</h4>
-          <p>Most owners complete their full account connection and first audit in under 10 minutes.</p>
-        </div>
-        <div class="callout">
-          <h4>Bank-level security</h4>
-          <p>Ned uses read-only access and 256-bit encryption. We can never move or modify your funds.</p>
-        </div>
-        <div class="callout">
-          <h4>No manual entry</h4>
-          <p>Transactions import and categorize automatically. Your job is to review, not to input.</p>
-        </div>
-      </div>
+      <h4>White-label ready</h4>
+      <p>Ned's curriculum can be co-branded with your organization's identity so your clients experience a seamless, trusted program.</p>
     </div>
-  </section>
-
-  <!-- ANALYZE -->
-  <section id="analyze" class="bg-white">
-    <div class="section">
-      <div class="phase-header">
-        <div class="phase-pill">Phase 02</div>
-        <div class="phase-title">Analyze</div>
+    <div class="partner-card">
+      <div class="partner-card-icon">
+        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
       </div>
-      <div class="phase-tagline">Understand where your business stands</div>
-      <div class="section-divider"></div>
+      <h4>Cohort or self-paced</h4>
+      <p>Run Ned as part of a structured cohort program, or give individual business owners access to move through at their own pace.</p>
+    </div>
+  </div>
 
-      <p class="body-text">
-        Once your data is in, Ned helps you interpret it. You'll learn how to read your
-        own financial patterns — which months are consistently strong, where costs have
-        quietly crept up, and which parts of your business are generating (or burning)
-        the most cash. Ned turns raw transactions into clear, actionable insight.
-      </p>
+  <div class="partner-logos-label">Current partner types</div>
+  <div class="partner-logos">
+    <div class="partner-logo-pill">CDFIs</div>
+    <div class="partner-logo-pill">SBDCs</div>
+    <div class="partner-logo-pill">Chambers of Commerce</div>
+    <div class="partner-logo-pill">Community Banks</div>
+    <div class="partner-logo-pill">Credit Unions</div>
+    <div class="partner-logo-pill">Nonprofits</div>
+  </div>
+</section>
 
-      <div class="sub-heading">What Ned analyzes for you</div>
-      <ul class="bullet-list">
-        <li>Revenue trends across 3, 6, and 12-month windows</li>
-        <li>Expense breakdowns by category, vendor, and time period</li>
-        <li>Profit margin analysis by product or service line</li>
-        <li>Cash flow forecasting to surface shortfalls early</li>
-        <li>Month-over-month and year-over-year comparisons</li>
-        <li>Automated anomaly and trend detection</li>
-        <li>Industry benchmarking vs. similar businesses</li>
-        <li>Customer and revenue concentration risk flags</li>
-      </ul>
-
-      <div class="callouts">
-        <div class="callout">
-          <h4>Plain-language summaries</h4>
-          <p>Every chart comes with a plain-English explanation so you always know what you're looking at.</p>
-        </div>
-        <div class="callout">
-          <h4>Trend alerts</h4>
-          <p>Ned proactively notifies you when a metric crosses a meaningful threshold — up or down.</p>
-        </div>
-        <div class="callout">
-          <h4>Exportable reports</h4>
-          <p>Share your analysis with an accountant, advisor, or lender with one click.</p>
-        </div>
+<!-- PROBLEM / SOLUTION -->
+<section id="problem">
+  <div class="section" style="padding-top:0;padding-bottom:0;max-width:960px;">
+    <div style="font-size:0.72rem;font-weight:800;letter-spacing:0.15em;text-transform:uppercase;color:var(--teal-dark);margin-bottom:12px;">Why this exists</div>
+    <h2 style="font-size:2rem;font-weight:900;color:var(--navy);margin-bottom:8px;">Most small business owners are flying blind.</h2>
+    <p style="font-size:1rem;color:var(--muted);max-width:600px;line-height:1.75;margin-bottom:36px;">They know something's off in their finances — they just don't know what, why, or what to do about it. Ned fixes that.</p>
+    <div class="ps-grid">
+      <div class="ps-card problem">
+        <span class="ps-label">Without Ned</span>
+        <h3>The reality for most small business owners</h3>
+        <ul class="ps-list">
+          <li>No clear picture of where money is going each month</li>
+          <li>Relying on gut instinct instead of real data</li>
+          <li>Finding out about cash flow problems too late</li>
+          <li>Generic financial advice that doesn't fit their situation</li>
+          <li>No time to learn accounting — and no one to ask</li>
+        </ul>
+      </div>
+      <div class="ps-card solution">
+        <span class="ps-label">With Ned</span>
+        <h3>What changes after completing the curriculum</h3>
+        <ul class="ps-list">
+          <li>Full visibility into every dollar in and out — automatically</li>
+          <li>Clear trend data to make confident decisions</li>
+          <li>Cash flow forecasting before problems hit</li>
+          <li>A playbook built specifically for your numbers</li>
+          <li>Accessible language and guidance, every step of the way</li>
+        </ul>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- EXECUTE -->
-  <section id="execute" class="bg-light">
-    <div class="section">
-      <div class="phase-header">
-        <div class="phase-pill">Phase 03</div>
-        <div class="phase-title">Execute</div>
+<!-- WHO IT'S FOR -->
+<section id="for-who">
+  <div class="for-who-inner">
+    <div class="section-eye">Who this is for</div>
+    <h2>Built for real small business owners</h2>
+    <p class="sub">Ned is designed for owners who are running their business day-to-day and don't have a finance team — but need to make smart money decisions anyway.</p>
+    <div class="who-grid">
+      <div class="who-card">
+        <h4>Service businesses</h4>
+        <p>Contractors, consultants, cleaners, landscapers — anyone billing clients and managing variable monthly income.</p>
       </div>
-      <div class="phase-tagline">Get a playbook built for your situation</div>
-      <div class="section-divider"></div>
+      <div class="who-card">
+        <h4>Retail & food</h4>
+        <p>Storefronts, restaurants, food trucks, and e-commerce sellers managing inventory, margins, and seasonal swings.</p>
+      </div>
+      <div class="who-card">
+        <h4>Solopreneurs</h4>
+        <p>One-person operations where the owner is doing everything — including trying to keep up with the books.</p>
+      </div>
+      <div class="who-card">
+        <h4>Early-stage businesses</h4>
+        <p>Businesses in their first 1–5 years that haven't yet built financial habits or systems that actually work.</p>
+      </div>
+      <div class="who-card">
+        <h4>Businesses facing pressure</h4>
+        <p>Owners who've noticed revenue slipping, costs rising, or cash getting tight — and need a clear path forward.</p>
+      </div>
+      <div class="who-card">
+        <h4>Growth-ready businesses</h4>
+        <p>Owners ready to hire, expand, or take on investment who need clean financials and a clear story to tell.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-      <p class="body-text">
-        Analysis only matters if it leads to action. Based on the patterns Ned identifies
-        in your specific data, you receive a curated set of resources, step-by-step
-        recommendations, and next steps tailored to your business right now — not generic
-        advice, but guidance that matches what your numbers are actually telling you.
-      </p>
+<!-- AUDIT -->
+<section id="audit" class="bg-white">
+  <div class="section">
+    <div class="phase-header">
+      <div class="phase-pill">Phase 01</div>
+      <div class="phase-title">Audit</div>
+    </div>
+    <div class="phase-tagline">Get a complete picture of your finances</div>
+    <div class="section-divider"></div>
+    <p class="body-text">The first step is connecting Ned to your business bank accounts. Ned securely pulls your full transaction history and organizes every dollar — showing you exactly where money is coming from and where it's going, automatically and in real time. This financial baseline is the foundation everything else is built on.</p>
+    <div class="sub-heading">What's included in your Audit</div>
+    <ul class="bullet-list">
+      <li>Secure, encrypted bank account connection via Ned</li>
+      <li>Automatic categorization of all revenue and expenses</li>
+      <li>Unified view across multiple accounts, cards, and payment methods</li>
+      <li>Up to 24 months of historical transaction import</li>
+      <li>Real-time sync so your data is always current</li>
+      <li>Custom category rules to match how your business operates</li>
+      <li>Duplicate detection and transaction cleaning</li>
+      <li>Instant summary dashboard on completion</li>
+    </ul>
+    <div class="callouts">
+      <div class="callout"><h4>Takes less than 10 minutes</h4><p>Most owners complete their full account connection and first audit in under 10 minutes.</p></div>
+      <div class="callout"><h4>No manual entry</h4><p>Transactions import and categorize automatically. Your job is to review, not to input.</p></div>
+      <div class="callout"><h4>Works with your bank</h4><p>Ned connects to thousands of financial institutions — if you bank there, we almost certainly support it.</p></div>
+    </div>
+    <div class="security-strip">
+      <div class="security-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <p><strong>Bank-level security.</strong> Ned uses read-only access and 256-bit encryption to connect your accounts. We can see your transactions — we can never move or modify your funds. Your data is never sold or shared with third parties.</p>
+    </div>
+  </div>
+</section>
 
-      <div class="sub-heading">What your playbook includes</div>
-      <ul class="bullet-list">
-        <li>Pattern-matched recommendations based on your actual data</li>
-        <li>Resources for cost reduction, revenue growth, and cash flow</li>
-        <li>Step-by-step action items ranked by estimated impact</li>
-        <li>Tools, templates, and calculators for your specific challenge</li>
-        <li>Connection to vetted advisors when you need expert help</li>
-        <li>Progress tracking to measure improvement over time</li>
-        <li>Playbook updates each month as your situation evolves</li>
-        <li>Scenario planning for growth, hiring, or downturns</li>
-      </ul>
+<!-- ANALYZE -->
+<section id="analyze" class="bg-light">
+  <div class="section">
+    <div class="phase-header">
+      <div class="phase-pill">Phase 02</div>
+      <div class="phase-title">Analyze</div>
+    </div>
+    <div class="phase-tagline">Understand where your business stands</div>
+    <div class="section-divider"></div>
+    <p class="body-text">Once your data is in, Ned helps you interpret it. You'll learn how to read your own financial patterns — which months are consistently strong, where costs have quietly crept up, and which parts of your business are generating (or burning) the most cash. Ned turns raw transactions into clear, actionable insight.</p>
+    <div class="sub-heading">What Ned analyzes for you</div>
+    <ul class="bullet-list">
+      <li>Revenue trends across 3, 6, and 12-month windows</li>
+      <li>Expense breakdowns by category, vendor, and time period</li>
+      <li>Profit margin analysis by product or service line</li>
+      <li>Cash flow forecasting to surface shortfalls early</li>
+      <li>Month-over-month and year-over-year comparisons</li>
+      <li>Automated anomaly and trend detection</li>
+      <li>Industry benchmarking vs. similar businesses</li>
+      <li>Revenue concentration and customer risk flags</li>
+    </ul>
+    <div class="callouts">
+      <div class="callout"><h4>Plain-language summaries</h4><p>Every chart comes with a plain-English explanation so you always know what you're looking at.</p></div>
+      <div class="callout"><h4>Trend alerts</h4><p>Ned proactively flags when a metric crosses a meaningful threshold — up or down — so nothing sneaks up on you.</p></div>
+      <div class="callout"><h4>Exportable reports</h4><p>Share your analysis with an accountant, advisor, or lender with a single click.</p></div>
+    </div>
+  </div>
+</section>
 
-      <div class="callouts">
-        <div class="callout">
-          <h4>Situation-specific</h4>
-          <p>Recommendations are generated from your actual data patterns, not a one-size-fits-all checklist.</p>
+<!-- EXECUTE -->
+<section id="execute" class="bg-white">
+  <div class="section">
+    <div class="phase-header">
+      <div class="phase-pill">Phase 03</div>
+      <div class="phase-title">Execute</div>
+    </div>
+    <div class="phase-tagline">Get a playbook built for your situation</div>
+    <div class="section-divider"></div>
+    <p class="body-text">Analysis only matters if it leads to action. Based on the patterns Ned identifies in your specific data, you receive a curated set of resources, step-by-step recommendations, and next steps tailored to your business right now — not generic advice, but guidance that matches what your numbers are actually telling you.</p>
+    <div class="sub-heading">What your playbook includes</div>
+    <ul class="bullet-list">
+      <li>Pattern-matched recommendations based on your actual data</li>
+      <li>Specific resources for cost reduction, revenue growth, and cash flow</li>
+      <li>Step-by-step action items ranked by estimated impact</li>
+      <li>Tools, templates, and calculators for your specific challenge</li>
+      <li>Connection to vetted advisors when you need expert help</li>
+      <li>Progress tracking to measure improvement over time</li>
+      <li>Monthly playbook updates as your situation evolves</li>
+      <li>Scenario planning for growth, hiring, or downturns</li>
+    </ul>
+    <div class="callouts">
+      <div class="callout"><h4>Situation-specific</h4><p>Recommendations come from your actual data patterns — not a one-size-fits-all checklist.</p></div>
+      <div class="callout"><h4>Prioritized by impact</h4><p>Every action item is ranked so you focus energy where it makes the biggest difference first.</p></div>
+      <div class="callout"><h4>Continuously updated</h4><p>As your financials change month to month, your playbook updates automatically to stay relevant.</p></div>
+    </div>
+    <div class="outcomes-box">
+      <div class="outcomes-eye">What you walk away with</div>
+      <h3>Concrete outcomes from completing all three phases</h3>
+      <div class="outcomes-grid">
+        <div class="outcome">
+          <div class="outcome-val">100%</div>
+          <div class="outcome-label">Visibility into your business finances — no more guessing</div>
         </div>
-        <div class="callout">
-          <h4>Prioritized by impact</h4>
-          <p>Every action item is ranked so you focus energy where it makes the biggest difference first.</p>
+        <div class="outcome">
+          <div class="outcome-val">12mo</div>
+          <div class="outcome-label">Of trend data analyzed and explained in plain language</div>
         </div>
-        <div class="callout">
-          <h4>Continuously updated</h4>
-          <p>As your financials change month to month, your playbook updates automatically to stay relevant.</p>
+        <div class="outcome">
+          <div class="outcome-val">1 plan</div>
+          <div class="outcome-label">A clear, prioritized action plan built specifically for your numbers</div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- HOW IT WORKS -->
-  <section id="how">
-    <div class="how-inner">
-      <div class="how-eye">How It Works</div>
-      <h2>From connection to clarity in three moves</h2>
-      <div class="steps">
-        <div class="step">
-          <div class="step-num">1</div>
-          <h4>Connect your accounts</h4>
-          <p>Link your business bank accounts securely through Ned. Your data imports automatically — no spreadsheets, no manual entry needed.</p>
-        </div>
-        <div class="step">
-          <div class="step-num">2</div>
-          <h4>Review your snapshot</h4>
-          <p>Ned surfaces key trends, flags problem areas, and gives you a plain-language summary of where your business stands financially.</p>
-        </div>
-        <div class="step">
-          <div class="step-num">3</div>
-          <h4>Follow your playbook</h4>
-          <p>Based on your unique data patterns, Ned delivers targeted resources and prioritized action items so you know exactly what to do next.</p>
-        </div>
+<!-- HOW IT WORKS -->
+<section id="how">
+  <div class="how-inner">
+    <div class="how-eye">How It Works</div>
+    <h2>From connection to clarity in three moves</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h4>Connect your accounts</h4>
+        <p>Link your business bank accounts securely through Ned. Your data imports automatically — no spreadsheets, no manual entry needed.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h4>Review your snapshot</h4>
+        <p>Ned surfaces key trends, flags problem areas, and gives you a plain-language summary of where your business stands financially.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h4>Follow your playbook</h4>
+        <p>Based on your unique data patterns, Ned delivers targeted resources and prioritized action items so you know exactly what to do next.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- CTA -->
-  <section id="cta">
-    <div class="eye">Get Started</div>
-    <h2>Ready to take control?</h2>
-    <p>Connect your first account and complete your financial audit in under 10 minutes. No accounting knowledge required.</p>
-    <a href="#" class="btn">Start Your Audit</a>
-  </section>
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="test-inner">
+    <div class="test-eye">From business owners</div>
+    <h2>What participants are saying</h2>
+    <div class="test-grid">
+      <div class="test-card">
+        <p class="test-text">"I've been running my business for six years and never really understood where my money was going. Ned showed me in about 20 minutes that I was losing $800 a month on subscriptions I'd forgotten about."</p>
+        <div class="test-name">Maria T.</div>
+        <div class="test-biz">Cleaning services, Houston TX</div>
+      </div>
+      <div class="test-card">
+        <p class="test-text">"The Execute phase was the part I didn't expect. I thought it would be generic advice but it flagged that my revenue had been declining for three consecutive months and gave me a specific plan to address it."</p>
+        <div class="test-name">DeShawn R.</div>
+        <div class="test-biz">Food truck operator, Atlanta GA</div>
+      </div>
+      <div class="test-card">
+        <p class="test-text">"My SBDC advisor recommended Ned as part of our program. The fact that it connected directly to my bank made me nervous at first, but I had full visibility the whole time and the security explanation put me at ease."</p>
+        <div class="test-name">Karen L.</div>
+        <div class="test-biz">Boutique retail, Portland OR</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="logo">Ned</div>
-    <p>© 2026 Ned. All rights reserved.</p>
-  </footer>
+<!-- FAQ -->
+<section id="faq">
+  <div class="faq-eye">Common questions</div>
+  <h2>FAQ</h2>
 
-  <script>
-    // Highlight active nav link on scroll
-    const sections = document.querySelectorAll('section[id]');
-    const links    = document.querySelectorAll('.nav-links a');
-    const obs = new IntersectionObserver(entries => {
+  <div class="faq-item">
+    <div class="faq-q">Is my bank supported? <span class="chevron">&#8964;</span></div>
+    <div class="faq-a">Ned connects to thousands of U.S. financial institutions including major national banks, regional banks, credit unions, and online banks. If you're unsure, you'll be able to search for your institution during setup — we support the vast majority of business banking accounts.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">Is my financial data safe? <span class="chevron">&#8964;</span></div>
+    <div class="faq-a">Yes. Ned uses read-only bank connections — we can view your transaction history but cannot move, modify, or access funds. All data is encrypted in transit and at rest using bank-level 256-bit encryption. Your data is never sold or shared with third parties, advertisers, or your partner organization without your explicit consent.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">How much does Ned cost? <span class="chevron">&#8964;</span></div>
+    <div class="faq-a">Ned is offered to business owners through partner organizations — in most cases at no cost to you, subsidized by the partner. If you've been referred to Ned by a CDFI, SBDC, chamber, or other organization, access is likely included as part of their programming. Contact your referring organization for details.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">How long does the program take? <span class="chevron">&#8964;</span></div>
+    <div class="faq-a">Most business owners complete all three phases in under two hours total. The Audit takes less than 10 minutes, the Analyze phase typically takes 30–45 minutes to review and understand your data, and the Execute phase is ongoing — your playbook updates monthly as your financials evolve.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">Do I need accounting knowledge? <span class="chevron">&#8964;</span></div>
+    <div class="faq-a">No. Ned is specifically designed for business owners who are not accountants. Every chart, metric, and recommendation is written in plain English. If something is unclear, there's always an explanation available — and your partner organization's advisors are there to support you as well.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">I'm a partner organization — how do I bring Ned to my clients? <span class="chevron">&#8964;</span></div>
+    <div class="faq-a">Ned is built to plug into existing small business support programs. We offer white-label options and cohort tools to support your programming. Reach out through the form below and we'll walk you through how it works for your specific organization type.</div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta">
+  <div class="cta-eye">Get started</div>
+  <h2>Ready to take control?</h2>
+  <p>Connect your first account and complete your financial audit in under 10 minutes. Ned is brought to you through your partner organization — free to access.</p>
+  <form class="email-form" onsubmit="return false;">
+    <input type="email" placeholder="Enter your email address" />
+    <button type="submit" class="btn">Get Access</button>
+  </form>
+  <p class="cta-note">Accessed through a partner organization near you. No credit card required.</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="logo">Ned</div>
+  <p>© 2026 Ned. All rights reserved.</p>
+</footer>
+
+<script>
+  // Active nav on scroll
+  const sections = document.querySelectorAll('section[id]');
+  const links = document.querySelectorAll('.nav-links a');
+  new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        links.forEach(l => l.classList.remove('active'));
+        const a = document.querySelector(`.nav-links a[href="#${e.target.id}"]`);
+        if (a) a.classList.add('active');
+      }
+    });
+  }, { threshold: 0.35 }).observe && sections.forEach(s =>
+    new IntersectionObserver(entries => {
       entries.forEach(e => {
         if (e.isIntersecting) {
           links.forEach(l => l.classList.remove('active'));
-          const active = document.querySelector(`.nav-links a[href="#${e.target.id}"]`);
-          if (active) active.classList.add('active');
+          const a = document.querySelector(`.nav-links a[href="#${e.target.id}"]`);
+          if (a) a.classList.add('active');
         }
       });
-    }, { threshold: 0.4 });
-    sections.forEach(s => obs.observe(s));
-  </script>
+    }, { threshold: 0.35 }).observe(s)
+  );
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-item').forEach(item => {
+    item.querySelector('.faq-q').addEventListener('click', () => {
+      const wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!wasOpen) item.classList.add('open');
+    });
+  });
+</script>
 
 </body>
 </html>
