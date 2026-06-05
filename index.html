@@ -119,9 +119,10 @@
       margin: 0 auto 48px; line-height: 1.75;
     }
     .partner-cards {
-      display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 16px; max-width: 860px; margin: 0 auto 48px;
+      display: flex; justify-content: center;
+      gap: 16px; max-width: 860px; margin: 0 auto 48px; flex-wrap: wrap;
     }
+    .partner-card { width: 320px; flex-shrink: 0; }
     .partner-card {
       background: rgba(255,255,255,0.05);
       border: 1px solid rgba(110,211,196,0.15);
@@ -258,7 +259,7 @@
     #testimonials h2 { font-size: 2rem; font-weight: 900; color: var(--navy); margin-bottom: 36px; }
     .test-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
     .test-card { background: #fff; border-radius: 14px; padding: 28px 24px; box-shadow: 0 1px 4px rgba(12,21,83,0.07); position: relative; }
-    .test-card::before { content: '"'; font-size: 4rem; font-weight: 900; color: var(--teal); line-height: 1; position: absolute; top: 14px; right: 22px; opacity: 0.4; }
+    .test-card::before { display: none; }
     .test-text { font-size: 0.93rem; color: var(--dark); line-height: 1.7; margin-bottom: 20px; font-style: italic; }
     .test-name { font-size: 0.85rem; font-weight: 700; color: var(--navy); }
     .test-biz  { font-size: 0.78rem; color: var(--muted); margin-top: 2px; }
@@ -613,17 +614,17 @@
     <h2>What participants are saying</h2>
     <div class="test-grid">
       <div class="test-card">
-        <p class="test-text">"I've been running my business for six years and never really understood where my money was going. Ned showed me in about 20 minutes that I was losing $800 a month on subscriptions I'd forgotten about."</p>
+        <p class="test-text">I've been running my business for six years and never really understood where my money was going. Ned showed me in about 20 minutes that I was losing $800 a month on subscriptions I'd forgotten about.</p>
         <div class="test-name">Maria T.</div>
         <div class="test-biz">Cleaning services, Houston TX</div>
       </div>
       <div class="test-card">
-        <p class="test-text">"The Execute phase was the part I didn't expect. I thought it would be generic advice but it flagged that my revenue had been declining for three consecutive months and gave me a specific plan to address it."</p>
+        <p class="test-text">The Execute phase was the part I didn't expect. I thought it would be generic advice but it flagged that my revenue had been declining for three consecutive months and gave me a specific plan to address it.</p>
         <div class="test-name">DeShawn R.</div>
         <div class="test-biz">Food truck operator, Atlanta GA</div>
       </div>
       <div class="test-card">
-        <p class="test-text">"My SBDC advisor recommended Ned as part of our program. The fact that it connected directly to my bank made me nervous at first, but I had full visibility the whole time and the security explanation put me at ease."</p>
+        <p class="test-text">My SBDC advisor recommended Ned as part of our program. The fact that it connected directly to my bank made me nervous at first, but I had full visibility the whole time and the security explanation put me at ease.</p>
         <div class="test-name">Karen L.</div>
         <div class="test-biz">Boutique retail, Portland OR</div>
       </div>
