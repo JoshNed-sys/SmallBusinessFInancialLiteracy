@@ -72,7 +72,8 @@
     .what-this-is p { font-size: 0.875rem; color: rgba(255,255,255,0.58); line-height: 1.75; }
     .mission-strip {
       border-top: 1px solid rgba(255,255,255,0.08); margin-top: 48px; padding-top: 32px;
-      display: flex; align-items: flex-start; gap: 20px; text-align: left;
+      display: flex; align-items: flex-start; justify-content: center; gap: 20px; text-align: left;
+      max-width: 620px; margin-left: auto; margin-right: auto;
     }
     .mission-strip-bar { width: 3px; flex-shrink: 0; background: var(--teal); border-radius: 2px; align-self: stretch; min-height: 44px; }
     .mission-strip p { font-size: 0.88rem; color: rgba(255,255,255,0.48); line-height: 1.78; font-style: italic; }
@@ -91,7 +92,8 @@
     p.sp.light { color: var(--navy3); }
 
     /* ── PROBLEMS ── */
-    #problems { background: var(--light); }
+    #problems { background: var(--light); padding: 88px 60px; }
+    .prob-inner { max-width: 1020px; margin: 0 auto; }
     .prob-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 44px; }
     .prob-card {
       background: #fff; border-radius: 12px; padding: 32px 28px;
@@ -103,7 +105,8 @@
     .prob-card p { font-size: 0.875rem; color: var(--muted); line-height: 1.68; }
 
     /* ── SOLUTION INTRO ── */
-    #solution-intro { background: #fff; }
+    #solution-intro { background: #fff; padding: 88px 60px; }
+    .sol-intro-inner { max-width: 1020px; margin: 0 auto; }
     .answer-box {
       background: var(--navy); border-radius: 16px; padding: 52px 52px;
       margin-top: 44px; display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center;
@@ -285,7 +288,7 @@
 <!-- THE PROGRAM MANAGER'S PROBLEMS -->
 <section id="problems">
   <div class="prob-inner">
-    <span class="eye teal-d">If you work in community development, you recognize these</span>
+    <span class="eye teal-d" style="margin-bottom:14px;">If you work in community development, you recognize these</span>
     <h2 class="sh">The problems Cash Compass is built to solve aren't the business owner's. They're yours.</h2>
     <p class="sp">The business owner's financial struggles are real — but the operational pain lands on you. These are the three problems program managers, TA leads, and philanthropic officers tell us they're most trying to solve.</p>
 
