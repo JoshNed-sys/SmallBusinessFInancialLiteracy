@@ -3,250 +3,179 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cash Compass by Ned — A Ready-to-Deploy Financial Program</title>
+  <title>Cash Compass by Ned — Community Partner Program</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --navy:  #0c1553;
-      --navy2: #151e5c;
-      --teal:  #6ed3c4;
-      --teal2: #e8faf8;
-      --light: #f7f8fc;
-      --muted: #64748b;
-      --dark:  #1e293b;
-      --navy3: #8892b8;
-      --teal-dark: #2d9e8f;
-      --border: #e8eaf0;
+      --navy: #0c1553; --navy2: #151e5c; --teal: #6ed3c4; --teal2: #e8faf8;
+      --light: #f7f8fc; --muted: #64748b; --dark: #1e293b;
+      --navy3: #8892b8; --teal-dark: #2d9e8f; --border: #e8eaf0;
     }
     html { scroll-behavior: smooth; }
     body { font-family: 'Inter', sans-serif; background: #fff; color: var(--navy); -webkit-font-smoothing: antialiased; }
 
-    /* ── NAV ── */
+    /* NAV */
     nav {
-      position: sticky; top: 0; z-index: 100;
-      background: var(--navy); padding: 0 60px;
-      display: flex; align-items: center; justify-content: space-between;
-      height: 60px; border-bottom: 1px solid rgba(255,255,255,0.06);
+      position: sticky; top: 0; z-index: 100; background: var(--navy);
+      padding: 0 60px; display: flex; align-items: center; justify-content: space-between;
+      height: 58px; border-bottom: 1px solid rgba(255,255,255,0.06);
     }
     .nav-logo { display: flex; flex-direction: column; gap: 1px; }
-    .nav-logo-main { font-size: 1rem; font-weight: 800; color: #fff; letter-spacing: -0.3px; }
-    .nav-logo-sub { font-size: 0.6rem; font-weight: 600; color: var(--teal); letter-spacing: 0.1em; text-transform: uppercase; }
+    .nav-logo-main { font-size: 0.95rem; font-weight: 800; color: #fff; }
+    .nav-logo-sub { font-size: 0.58rem; font-weight: 600; color: var(--teal); letter-spacing: 0.1em; text-transform: uppercase; }
     .nav-links { display: flex; gap: 2px; }
-    .nav-links a {
-      text-decoration: none; font-size: 0.72rem; font-weight: 600;
-      letter-spacing: 0.06em; text-transform: uppercase;
-      color: rgba(255,255,255,0.4); padding: 7px 14px;
-      border-radius: 6px; transition: all 0.15s;
-    }
-    .nav-links a:hover { color: rgba(255,255,255,0.85); background: rgba(255,255,255,0.08); }
+    .nav-links a { text-decoration: none; font-size: 0.71rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255,255,255,0.4); padding: 6px 13px; border-radius: 6px; transition: all 0.15s; }
+    .nav-links a:hover { color: rgba(255,255,255,0.8); background: rgba(255,255,255,0.07); }
     .nav-links a.active { color: var(--navy); background: var(--teal); }
 
-    /* ── BANNER ── */
-    .banner {
-      background: var(--teal); padding: 9px 60px;
-      display: flex; align-items: center; justify-content: center; gap: 16px;
-    }
-    .banner p { font-size: 0.8rem; font-weight: 600; color: var(--navy); }
-    .banner .pill { font-size: 0.68rem; font-weight: 700; color: var(--navy); background: rgba(12,21,83,0.14); padding: 3px 10px; border-radius: 4px; letter-spacing: 0.04em; }
+    /* BANNER */
+    .banner { background: var(--teal); padding: 9px 60px; display: flex; align-items: center; justify-content: center; gap: 14px; }
+    .banner p { font-size: 0.79rem; font-weight: 600; color: var(--navy); }
+    .banner .pill { font-size: 0.66rem; font-weight: 700; color: var(--navy); background: rgba(12,21,83,0.14); padding: 3px 10px; border-radius: 4px; }
 
-    /* ── HERO ── */
-    #hero { background: var(--navy); padding: 100px 60px 96px; position: relative; overflow: hidden; text-align: center; }
-    #hero::before {
-      content: ''; position: absolute; inset: 0;
-      background: radial-gradient(ellipse 90% 70% at 50% -20%, rgba(110,211,196,0.11) 0%, transparent 60%);
-      pointer-events: none;
-    }
+    /* HERO */
+    #hero { background: var(--navy); padding: 88px 60px 80px; position: relative; overflow: hidden; text-align: center; }
+    #hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 90% 60% at 50% -10%, rgba(110,211,196,0.11) 0%, transparent 60%); pointer-events: none; }
     .teal-bar { position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, transparent, var(--teal), transparent); }
-    .hero-inner { max-width: 780px; margin: 0 auto; position: relative; z-index: 1; }
-    .hero-eye { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--teal); margin-bottom: 24px; display: inline-flex; align-items: center; gap: 10px; background: rgba(110,211,196,0.1); border: 1px solid rgba(110,211,196,0.2); padding: 6px 16px; border-radius: 100px; }
-    #hero h1 { font-size: 3.2rem; font-weight: 900; color: #fff; line-height: 1.1; margin-bottom: 24px; letter-spacing: -0.6px; }
+    .hero-inner { max-width: 720px; margin: 0 auto; position: relative; z-index: 1; }
+    .hero-eye { font-size: 0.66rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--teal); margin-bottom: 22px; display: inline-flex; align-items: center; gap: 8px; background: rgba(110,211,196,0.1); border: 1px solid rgba(110,211,196,0.2); padding: 5px 14px; border-radius: 100px; }
+    #hero h1 { font-size: 3rem; font-weight: 900; color: #fff; line-height: 1.1; margin-bottom: 20px; letter-spacing: -0.5px; }
     #hero h1 em { font-style: normal; color: var(--teal); }
-    #hero .sub { font-size: 1.05rem; color: rgba(255,255,255,0.52); line-height: 1.82; margin-bottom: 48px; max-width: 620px; margin-left: auto; margin-right: auto; }
-    .what-this-is {
-      background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 14px; padding: 28px 36px; text-align: left; margin-bottom: 0;
-    }
-    .what-this-is .label { font-size: 0.62rem; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: var(--teal); margin-bottom: 12px; display: block; }
-    .what-this-is-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
-    .what-this-is p { font-size: 0.875rem; color: rgba(255,255,255,0.58); line-height: 1.75; }
-    .mission-strip {
-      border-top: 1px solid rgba(255,255,255,0.08); margin-top: 48px; padding-top: 32px;
-      display: flex; align-items: flex-start; justify-content: center; gap: 20px; text-align: left;
-      max-width: 620px; margin-left: auto; margin-right: auto;
-    }
-    .mission-strip-bar { width: 3px; flex-shrink: 0; background: var(--teal); border-radius: 2px; align-self: stretch; min-height: 44px; }
-    .mission-strip p { font-size: 0.88rem; color: rgba(255,255,255,0.48); line-height: 1.78; font-style: italic; }
+    #hero .sub { font-size: 1.02rem; color: rgba(255,255,255,0.52); line-height: 1.8; margin-bottom: 44px; }
+    .what-this-is { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 26px 32px; text-align: left; }
+    .what-this-is .label { font-size: 0.6rem; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: var(--teal); margin-bottom: 12px; display: block; }
+    .what-this-is-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .what-this-is p { font-size: 0.865rem; color: rgba(255,255,255,0.56); line-height: 1.72; }
+    .mission-strip { display: flex; align-items: flex-start; gap: 16px; margin-top: 40px; padding-top: 28px; border-top: 1px solid rgba(255,255,255,0.08); max-width: 580px; margin-left: auto; margin-right: auto; text-align: left; }
+    .mission-strip-bar { width: 3px; min-height: 40px; background: var(--teal); border-radius: 2px; flex-shrink: 0; align-self: stretch; }
+    .mission-strip p { font-size: 0.855rem; color: rgba(255,255,255,0.42); line-height: 1.75; font-style: italic; }
 
-    /* ── GLOBAL SECTION ── */
-    .section-wrap { max-width: 1020px; margin: 0 auto; padding: 88px 60px; }
-    .eye { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
-    .eye::before { content: ''; display: block; width: 18px; height: 2px; flex-shrink: 0; }
-    .eye.teal-d { color: var(--teal-dark); }
-    .eye.teal-d::before { background: var(--teal-dark); }
-    .eye.teal-l { color: var(--teal); }
-    .eye.teal-l::before { background: var(--teal); }
-    h2.sh { font-size: 2.1rem; font-weight: 900; color: var(--navy); line-height: 1.2; margin-bottom: 16px; letter-spacing: -0.3px; }
-    h2.sh.white { color: #fff; }
-    p.sp { font-size: 1rem; color: var(--muted); line-height: 1.82; max-width: 640px; }
-    p.sp.light { color: var(--navy3); }
+    /* SHARED */
+    .inner { max-width: 1020px; margin: 0 auto; }
+    .eye { font-size: 0.63rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+    .eye::before { content: ''; display: block; width: 16px; height: 2px; flex-shrink: 0; }
+    .eye.td { color: var(--teal-dark); } .eye.td::before { background: var(--teal-dark); }
+    .eye.tl { color: var(--teal); } .eye.tl::before { background: var(--teal); }
+    h2.sh { font-size: 2rem; font-weight: 900; color: var(--navy); line-height: 1.2; margin-bottom: 14px; letter-spacing: -0.3px; }
+    h2.sh.w { color: #fff; }
+    p.sp { font-size: 0.975rem; color: var(--muted); line-height: 1.8; max-width: 620px; }
+    p.sp.l { color: var(--navy3); }
 
-    /* ── PROBLEMS ── */
-    #problems { background: var(--light); padding: 88px 60px; }
-    .prob-inner { max-width: 1020px; margin: 0 auto; }
-    .prob-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 44px; }
-    .prob-card {
-      background: #fff; border-radius: 12px; padding: 32px 28px;
-      border: 1px solid var(--border); position: relative; overflow: hidden;
-    }
+    /* PROBLEMS */
+    #problems { background: var(--light); padding: 80px 60px; }
+    .prob-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 40px; }
+    .prob-card { background: #fff; border-radius: 12px; padding: 28px 26px; border: 1px solid var(--border); position: relative; overflow: hidden; }
     .prob-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #fca5a5, #fecaca); }
-    .prob-num { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: #ef4444; margin-bottom: 14px; display: block; }
-    .prob-card h3 { font-size: 1.05rem; font-weight: 800; color: var(--navy); margin-bottom: 12px; line-height: 1.38; }
-    .prob-card p { font-size: 0.875rem; color: var(--muted); line-height: 1.68; }
+    .prob-num { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: #ef4444; margin-bottom: 12px; display: block; }
+    .prob-card h3 { font-size: 1rem; font-weight: 800; color: var(--navy); margin-bottom: 10px; line-height: 1.35; }
+    .prob-card p { font-size: 0.855rem; color: var(--muted); line-height: 1.65; }
 
-    /* ── SOLUTION INTRO ── */
-    #solution-intro { background: #fff; padding: 88px 60px; }
-    .sol-intro-inner { max-width: 1020px; margin: 0 auto; }
-    .answer-box {
-      background: var(--navy); border-radius: 16px; padding: 52px 52px;
-      margin-top: 44px; display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center;
-      position: relative; overflow: hidden;
-    }
-    .answer-box::before {
-      content: ''; position: absolute; width: 400px; height: 400px;
-      background: radial-gradient(circle, rgba(110,211,196,0.08) 0%, transparent 65%);
-      bottom: -100px; right: -80px; pointer-events: none;
-    }
-    .answer-box h3 { font-size: 1.65rem; font-weight: 900; color: #fff; line-height: 1.22; margin-bottom: 16px; letter-spacing: -0.3px; }
+    /* SOLUTION INTRO */
+    #solution-intro { background: #fff; padding: 80px 60px; }
+    .answer-box { background: var(--navy); border-radius: 14px; padding: 44px 48px; margin-top: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; position: relative; overflow: hidden; }
+    .answer-box::before { content: ''; position: absolute; width: 360px; height: 360px; background: radial-gradient(circle, rgba(110,211,196,0.07) 0%, transparent 65%); bottom: -100px; right: -60px; pointer-events: none; }
+    .answer-box h3 { font-size: 1.5rem; font-weight: 900; color: #fff; line-height: 1.22; margin-bottom: 12px; letter-spacing: -0.3px; }
     .answer-box h3 em { font-style: normal; color: var(--teal); }
-    .answer-box p { font-size: 0.9rem; color: var(--navy3); line-height: 1.78; }
-    .answer-box p + p { margin-top: 12px; }
-    .answer-bullets { list-style: none; display: flex; flex-direction: column; gap: 14px; position: relative; z-index: 1; }
-    .answer-bullets li { font-size: 0.9rem; color: rgba(255,255,255,0.78); line-height: 1.55; display: flex; align-items: flex-start; gap: 12px; }
+    .answer-box p { font-size: 0.875rem; color: var(--navy3); line-height: 1.75; }
+    .answer-bullets { list-style: none; display: flex; flex-direction: column; gap: 12px; position: relative; z-index: 1; }
+    .answer-bullets li { font-size: 0.875rem; color: rgba(255,255,255,0.75); line-height: 1.55; display: flex; align-items: flex-start; gap: 10px; }
     .answer-bullets li::before { content: ''; width: 6px; height: 6px; background: var(--teal); border-radius: 50%; flex-shrink: 0; margin-top: 7px; }
 
-    /* ── PHASES ── */
-    .phase-section { padding: 88px 60px; }
+    /* PHASES */
+    .phase-section { padding: 80px 60px; }
     .phase-section.alt { background: var(--light); }
-    .phase-inner { max-width: 1020px; margin: 0 auto; }
-    .phase-header { display: flex; align-items: center; gap: 16px; margin-bottom: 8px; }
-    .phase-pill {
-      font-size: 0.62rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
-      background: var(--teal); color: var(--navy); padding: 5px 13px; border-radius: 5px;
-    }
-    .phase-title { font-size: 3.2rem; font-weight: 900; color: var(--navy); line-height: 1; letter-spacing: -1px; }
-    .phase-tagline { font-size: 1rem; color: var(--muted); margin: 10px 0 28px; max-width: 640px; line-height: 1.65; }
-    .phase-rule { height: 2px; background: linear-gradient(90deg, var(--teal) 0%, rgba(110,211,196,0.15) 100%); border-radius: 2px; margin-bottom: 28px; }
-    .phase-body { font-size: 1rem; color: var(--muted); line-height: 1.85; max-width: 680px; margin-bottom: 32px; }
-    .phase-sub { font-size: 0.68rem; font-weight: 700; color: var(--navy); margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.1em; }
-    .feat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 40px; margin-bottom: 32px; list-style: none; }
-    .feat-grid li { font-size: 0.9rem; color: var(--dark); line-height: 1.55; display: flex; align-items: flex-start; gap: 10px; padding: 2px 0; }
-    .feat-grid li::before { content: ''; width: 6px; height: 6px; background: var(--teal); border-radius: 50%; flex-shrink: 0; margin-top: 7px; }
-    .callout-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 20px; }
-    .callout { background: var(--teal2); border-radius: 10px; padding: 18px 20px; border: 1px solid rgba(110,211,196,0.3); }
-    .callout h4 { font-size: 0.83rem; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
-    .callout p { font-size: 0.8rem; color: var(--muted); line-height: 1.58; }
-    .advisor-note {
-      background: var(--navy); border-radius: 10px; padding: 20px 24px;
-      display: flex; align-items: flex-start; gap: 16px; margin-top: 8px;
-      border: 1px solid rgba(110,211,196,0.15);
-    }
-    .advisor-note-dot { width: 7px; height: 7px; background: var(--teal); border-radius: 50%; flex-shrink: 0; margin-top: 6px; }
-    .advisor-note p { font-size: 0.875rem; color: rgba(255,255,255,0.68); line-height: 1.65; font-style: italic; }
+    .phase-header { display: flex; align-items: center; gap: 14px; margin-bottom: 6px; }
+    .phase-pill { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; background: var(--teal); color: var(--navy); padding: 5px 12px; border-radius: 5px; }
+    .phase-title { font-size: 2.8rem; font-weight: 900; color: var(--navy); line-height: 1; letter-spacing: -1px; }
+    .phase-tagline { font-size: 0.95rem; color: var(--muted); margin: 8px 0 20px; max-width: 600px; line-height: 1.6; }
+    .phase-rule { height: 2px; background: linear-gradient(90deg, var(--teal), transparent); border-radius: 2px; margin-bottom: 22px; }
+    .phase-body { font-size: 0.965rem; color: var(--muted); line-height: 1.82; max-width: 660px; margin-bottom: 24px; }
+    .feat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 36px; margin-bottom: 24px; list-style: none; }
+    .feat-grid li { font-size: 0.875rem; color: var(--dark); line-height: 1.5; display: flex; align-items: flex-start; gap: 9px; }
+    .feat-grid li::before { content: ''; width: 5px; height: 5px; background: var(--teal); border-radius: 50%; flex-shrink: 0; margin-top: 7px; }
+    .callout-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 16px; }
+    .callout { background: var(--teal2); border-radius: 10px; padding: 16px 18px; border: 1px solid rgba(110,211,196,0.25); }
+    .callout h4 { font-size: 0.81rem; font-weight: 700; color: var(--navy); margin-bottom: 5px; }
+    .callout p { font-size: 0.78rem; color: var(--muted); line-height: 1.55; }
+    .advisor-note { background: var(--navy); border-radius: 10px; padding: 18px 22px; display: flex; align-items: flex-start; gap: 14px; margin-top: 6px; border: 1px solid rgba(110,211,196,0.14); }
+    .advisor-note-dot { width: 6px; height: 6px; background: var(--teal); border-radius: 50%; flex-shrink: 0; margin-top: 7px; }
+    .advisor-note p { font-size: 0.845rem; color: rgba(255,255,255,0.62); line-height: 1.62; font-style: italic; }
 
-    /* ── VALUE ── */
-    #value { background: var(--light); }
-    .val-inner { max-width: 1020px; margin: 0 auto; padding: 88px 60px; }
-    .benefit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 44px 0 52px; }
-    .benefit-card {
-      background: #fff; border-radius: 12px; padding: 30px 28px;
-      border: 1px solid var(--border); transition: box-shadow 0.2s;
-    }
-    .benefit-card:hover { box-shadow: 0 4px 20px rgba(12,21,83,0.08); }
-    .benefit-card h4 { font-size: 0.95rem; font-weight: 800; color: var(--navy); margin-bottom: 10px; line-height: 1.35; }
-    .benefit-card h4::before { content: ''; display: inline-block; width: 5px; height: 5px; background: var(--teal); border-radius: 50%; margin-right: 8px; vertical-align: middle; position: relative; top: -1px; }
-    .benefit-card p { font-size: 0.875rem; color: var(--muted); line-height: 1.68; }
-    .ops-section-label { font-size: 1rem; font-weight: 800; color: var(--navy); margin-bottom: 20px; padding-bottom: 14px; border-bottom: 1px solid var(--border); }
-    .ops-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 52px; }
-    .ops-card {
-      background: #fff; border-radius: 12px; padding: 28px 24px;
-      border: 1px solid var(--border); position: relative;
-    }
-    .ops-label { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--teal-dark); margin-bottom: 10px; display: block; }
-    .ops-card h4 { font-size: 0.95rem; font-weight: 800; color: var(--navy); margin-bottom: 10px; }
-    .ops-card p { font-size: 0.86rem; color: var(--muted); line-height: 1.65; }
-    .who-box { background: var(--navy); border-radius: 14px; padding: 44px 44px; }
-    .who-box p { font-size: 0.95rem; color: rgba(255,255,255,0.55); max-width: 560px; line-height: 1.8; margin: 12px 0 28px; }
+    /* VALUE */
+    #value { background: var(--light); padding: 80px 60px; }
+    .benefit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 36px 0 44px; }
+    .benefit-card { background: #fff; border-radius: 12px; padding: 26px 24px; border: 1px solid var(--border); transition: box-shadow 0.2s; }
+    .benefit-card:hover { box-shadow: 0 4px 18px rgba(12,21,83,0.07); }
+    .benefit-card h4 { font-size: 0.92rem; font-weight: 800; color: var(--navy); margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+    .benefit-card h4::before { content: ''; display: inline-block; width: 5px; height: 5px; background: var(--teal); border-radius: 50%; flex-shrink: 0; }
+    .benefit-card p { font-size: 0.845rem; color: var(--muted); line-height: 1.65; }
+    .ops-label-text { font-size: 0.95rem; font-weight: 800; color: var(--navy); margin-bottom: 18px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+    .ops-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 44px; }
+    .ops-card { background: #fff; border-radius: 12px; padding: 24px 22px; border: 1px solid var(--border); }
+    .ops-tag { font-size: 0.58rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--teal-dark); margin-bottom: 8px; display: block; }
+    .ops-card h4 { font-size: 0.92rem; font-weight: 800; color: var(--navy); margin-bottom: 8px; }
+    .ops-card p { font-size: 0.835rem; color: var(--muted); line-height: 1.62; }
+    .who-box { background: var(--navy); border-radius: 14px; padding: 40px 44px; }
+    .who-box p { font-size: 0.9rem; color: rgba(255,255,255,0.5); max-width: 540px; line-height: 1.75; margin: 10px 0 24px; }
     .who-tags { display: flex; flex-wrap: wrap; gap: 8px; }
-    .who-tag { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; padding: 8px 16px; font-size: 0.82rem; font-weight: 500; color: rgba(255,255,255,0.6); }
-    .who-tag.highlight { background: rgba(110,211,196,0.12); border-color: rgba(110,211,196,0.35); color: rgba(255,255,255,0.88); font-weight: 600; }
+    .who-tag { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; padding: 7px 14px; font-size: 0.8rem; font-weight: 500; color: rgba(255,255,255,0.58); }
+    .who-tag.hl { background: rgba(110,211,196,0.12); border-color: rgba(110,211,196,0.35); color: rgba(255,255,255,0.86); font-weight: 600; }
 
-    /* ── FIT ── */
-    #fit { padding: 88px 60px; }
-    .fit-inner { max-width: 1020px; margin: 0 auto; }
-    .fit-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 40px; }
-    .fit-card { background: var(--light); border-radius: 12px; padding: 26px 24px; border: 1px solid var(--border); }
-    .fit-card h4 { font-size: 0.92rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
-    .fit-card p { font-size: 0.84rem; color: var(--muted); line-height: 1.62; }
-
-    /* ── FAQ ── */
-    #faq { background: var(--light); padding: 88px 60px; }
-    .faq-inner { max-width: 700px; margin: 0 auto; }
-    .faq-item { border-bottom: 1px solid var(--border); padding: 22px 0; cursor: pointer; }
+    /* FAQ */
+    #faq { background: var(--light); padding: 80px 60px; }
+    .faq-inner { max-width: 680px; margin: 0 auto; }
+    .faq-item { border-bottom: 1px solid var(--border); padding: 20px 0; cursor: pointer; }
     .faq-item:first-of-type { border-top: 1px solid var(--border); }
-    .faq-q { font-size: 0.95rem; font-weight: 700; color: var(--navy); display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }
-    .chevron { width: 22px; height: 22px; background: rgba(110,211,196,0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; color: var(--teal-dark); transition: transform 0.2s; flex-shrink: 0; margin-top: 1px; }
-    .faq-a { font-size: 0.9rem; color: var(--muted); line-height: 1.78; margin-top: 14px; display: none; padding-right: 38px; }
+    .faq-q { font-size: 0.93rem; font-weight: 700; color: var(--navy); display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }
+    .chevron { width: 20px; height: 20px; background: rgba(110,211,196,0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; color: var(--teal-dark); transition: transform 0.2s; flex-shrink: 0; margin-top: 2px; }
+    .faq-a { font-size: 0.875rem; color: var(--muted); line-height: 1.75; margin-top: 12px; display: none; padding-right: 36px; }
     .faq-item.open .faq-a { display: block; }
     .faq-item.open .chevron { transform: rotate(180deg); background: rgba(110,211,196,0.25); }
 
-    /* ── CTA ── */
-    #cta { background: var(--navy); padding: 100px 60px; text-align: center; position: relative; overflow: hidden; }
-    #cta::before {
-      content: ''; position: absolute; width: 600px; height: 600px;
-      background: radial-gradient(circle, rgba(110,211,196,0.08) 0%, transparent 65%);
-      left: 50%; bottom: -200px; transform: translateX(-50%); pointer-events: none;
-    }
+    /* CTA */
+    #cta { background: var(--navy); padding: 88px 60px; text-align: center; position: relative; overflow: hidden; }
+    #cta::before { content: ''; position: absolute; width: 500px; height: 500px; background: radial-gradient(circle, rgba(110,211,196,0.08) 0%, transparent 65%); left: 50%; bottom: -200px; transform: translateX(-50%); pointer-events: none; }
     .cta-inner { position: relative; z-index: 1; }
-    .cta-eye { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--teal); margin-bottom: 18px; display: flex; align-items: center; justify-content: center; gap: 8px; }
-    .cta-eye::before, .cta-eye::after { content: ''; display: block; width: 20px; height: 1px; background: var(--teal); opacity: 0.5; }
-    #cta h2 { font-size: 2.4rem; font-weight: 900; color: #fff; line-height: 1.15; max-width: 540px; margin: 0 auto 16px; letter-spacing: -0.4px; }
-    #cta p { font-size: 1rem; color: var(--navy3); max-width: 460px; margin: 0 auto 40px; line-height: 1.8; }
-    .email-form { display: flex; gap: 8px; max-width: 440px; margin: 0 auto 14px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; padding: 6px 6px 6px 20px; }
-    .email-form input { flex: 1; padding: 10px 0; border: none; background: transparent; color: #fff; font-size: 0.9rem; font-family: inherit; outline: none; }
-    .email-form input::placeholder { color: rgba(255,255,255,0.3); }
-    .btn { background: var(--teal); color: var(--navy); font-size: 0.88rem; font-weight: 800; padding: 12px 24px; border-radius: 8px; border: none; cursor: pointer; font-family: inherit; white-space: nowrap; transition: opacity 0.2s; }
+    .cta-eye { font-size: 0.63rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--teal); margin-bottom: 16px; display: flex; align-items: center; justify-content: center; gap: 10px; }
+    .cta-eye::before, .cta-eye::after { content: ''; display: block; width: 18px; height: 1px; background: var(--teal); opacity: 0.5; }
+    #cta h2 { font-size: 2.2rem; font-weight: 900; color: #fff; line-height: 1.15; max-width: 500px; margin: 0 auto 14px; letter-spacing: -0.4px; }
+    #cta p { font-size: 0.975rem; color: var(--navy3); max-width: 420px; margin: 0 auto 36px; line-height: 1.78; }
+    .email-form { display: flex; gap: 8px; max-width: 420px; margin: 0 auto 12px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; padding: 6px 6px 6px 18px; }
+    .email-form input { flex: 1; padding: 9px 0; border: none; background: transparent; color: #fff; font-size: 0.875rem; font-family: inherit; outline: none; }
+    .email-form input::placeholder { color: rgba(255,255,255,0.28); }
+    .btn { background: var(--teal); color: var(--navy); font-size: 0.85rem; font-weight: 800; padding: 11px 22px; border-radius: 7px; border: none; cursor: pointer; font-family: inherit; white-space: nowrap; transition: opacity 0.2s; }
     .btn:hover { opacity: 0.88; }
-    .cta-note { font-size: 0.74rem; color: rgba(255,255,255,0.22); }
+    .cta-note { font-size: 0.72rem; color: rgba(255,255,255,0.2); }
 
-    /* ── FOOTER ── */
-    footer { background: var(--navy2); padding: 28px 60px; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid rgba(255,255,255,0.06); }
-    footer .logo { display: flex; flex-direction: column; gap: 2px; }
-    footer .logo-main { font-size: 0.95rem; font-weight: 800; color: #fff; letter-spacing: -0.2px; }
-    footer .logo-sub { font-size: 0.6rem; font-weight: 600; color: var(--teal); letter-spacing: 0.1em; text-transform: uppercase; }
-    footer p { font-size: 0.76rem; color: rgba(255,255,255,0.22); }
+    /* FOOTER */
+    footer { background: var(--navy2); padding: 26px 60px; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid rgba(255,255,255,0.06); }
+    .footer-logo { display: flex; flex-direction: column; gap: 2px; }
+    .footer-logo-main { font-size: 0.9rem; font-weight: 800; color: #fff; }
+    .footer-logo-sub { font-size: 0.58rem; font-weight: 600; color: var(--teal); letter-spacing: 0.1em; text-transform: uppercase; }
+    footer p { font-size: 0.74rem; color: rgba(255,255,255,0.2); }
 
-    /* ── RESPONSIVE ── */
     @media (max-width: 860px) {
-      nav, .banner, .section-wrap, .phase-section, #value, .val-inner, #fit, #faq, #cta { padding-left: 24px; padding-right: 24px; }
-      .hero-inner { grid-template-columns: 1fr; gap: 36px; }
+      nav, .banner, #problems, #solution-intro, .phase-section, #value, #faq, #cta { padding-left: 24px; padding-right: 24px; }
+      nav { padding-left: 20px; padding-right: 20px; }
+      .nav-links { display: none; }
       #hero { padding-left: 24px; padding-right: 24px; }
       #hero h1 { font-size: 2.1rem; }
-      .prob-grid, .feat-grid, .callout-row, .benefit-grid, .ops-grid, .fit-grid, .answer-box { grid-template-columns: 1fr; }
-      .answer-box { padding: 32px 28px; }
-      .nav-links { display: none; }
-      .email-form { flex-direction: column; background: none; border: none; padding: 0; gap: 10px; }
-      .email-form input { background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.15); border-radius: 100px; padding: 14px 20px; }
-      .btn { border-radius: 100px; padding: 14px 28px; }
-      footer { padding: 24px; flex-direction: column; gap: 8px; text-align: center; }
+      .what-this-is-inner, .prob-grid, .feat-grid, .callout-row, .answer-box, .benefit-grid, .ops-grid { grid-template-columns: 1fr; }
+      .answer-box { padding: 28px 24px; }
+      .email-form { flex-direction: column; background: none; border: none; padding: 0; }
+      .email-form input { background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.15); border-radius: 8px; padding: 12px 16px; }
+      footer { padding: 22px 20px; flex-direction: column; gap: 8px; text-align: center; }
     }
   </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
-  <div class="nav-logo"><span class="nav-logo-main">Cash Compass by Ned</span><span class="nav-logo-sub">Community Partner Program</span></div>
+  <div class="nav-logo">
+    <span class="nav-logo-main">Cash Compass by Ned</span>
+    <span class="nav-logo-sub">Community Partner Program</span>
+  </div>
   <div class="nav-links">
     <a href="#hero">Overview</a>
     <a href="#problems">The Problem</a>
@@ -256,7 +185,6 @@
   </div>
 </nav>
 
-<!-- BANNER -->
 <div class="banner">
   <p>For community development organizations, CDFIs, SBDCs, and philanthropic program officers.</p>
   <div class="pill">Partnership Overview</div>
@@ -268,13 +196,13 @@
   <div class="hero-inner">
     <span class="hero-eye">Cash Compass by Ned</span>
     <h1>Your business owners need real financial clarity.<br><em>Now you have something to give them.</em></h1>
-    <p class="sub">Cash Compass is a ready-to-deploy bundle of technology and resources that gives small business owners immediate visibility into their finances, a plain-language picture of what's working and what isn't, and a personalized action plan to move forward — in under two hours, with no financial background required.</p>
+    <p class="sub">A ready-to-deploy program that gives small business owners immediate financial visibility, a plain-language picture of what's working and what isn't, and a personalized action plan — in under two hours, no financial background required.</p>
 
     <div class="what-this-is">
       <span class="label">What this is</span>
       <div class="what-this-is-inner">
-        <p>Ned provides the analysis — connecting to bank accounts, organizing transactions, and surfacing financial patterns. Cash Compass provides the interpretation and the path forward: a web-based field guide that explains every metric in plain language, what it means for that specific business, and what to do about it.</p>
-        <p>Partner organizations bring it to the business owners they already serve. No financial expertise required on your end. The guide does that work.</p>
+        <p>Ned provides the analysis — connecting bank accounts, organizing transactions, and surfacing financial patterns for each business owner.</p>
+        <p>Cash Compass provides the interpretation: a field guide explaining every metric in plain language, what it means, and what to do about it. Partner organizations bring it to the business owners they already serve.</p>
       </div>
     </div>
 
@@ -285,52 +213,49 @@
   </div>
 </section>
 
-<!-- THE PROGRAM MANAGER'S PROBLEMS -->
+<!-- PROBLEMS -->
 <section id="problems">
-  <div class="prob-inner">
-    <span class="eye teal-d" style="margin-bottom:14px;">If you work in community development, you recognize these</span>
-    <h2 class="sh">The problems Cash Compass is built to solve aren't the business owner's. They're yours.</h2>
-    <p class="sp">The business owner's financial struggles are real — but the operational pain lands on you. These are the three problems program managers, TA leads, and philanthropic officers tell us they're most trying to solve.</p>
-
+  <div class="inner">
+    <span class="eye td">If you work in community development, you recognize these</span>
+    <h2 class="sh">The problems Cash Compass solves aren't the business owner's. They're yours.</h2>
+    <p class="sp">The business owner's financial struggles are real — but the operational pain lands on you.</p>
     <div class="prob-grid">
       <div class="prob-card">
         <span class="prob-num">Problem 01</span>
         <h3>Every advising session starts from scratch</h3>
-        <p>Your advisors walk in without a financial baseline on the business. Half the session is spent figuring out where the owner stands — and you're back to square one next time. There's no continuity, no foundation to build on.</p>
+        <p>Your advisors walk in without a financial baseline. Half the session is spent figuring out where the owner stands — and you're back to square one next time.</p>
       </div>
       <div class="prob-card">
         <span class="prob-num">Problem 02</span>
         <h3>Outcomes are hard to document</h3>
-        <p>Your funders want evidence of impact, not hours-of-TA metrics. But right now you're struggling to show what actually changed for the businesses you served. "We ran a workshop" is not a reportable outcome. You need something more concrete.</p>
+        <p>Funders want evidence of impact, not hours-of-TA. Right now you're struggling to show what actually changed for the businesses you served.</p>
       </div>
       <div class="prob-card">
         <span class="prob-num">Problem 03</span>
         <h3>Owners leave without a real plan</h3>
-        <p>Workshops cover principles. Sessions cover what came up that day. But business owners rarely walk away with something specific they'll actually follow — built from their own numbers, matched to their real situation. The gap between insight and action stays open.</p>
+        <p>Workshops cover principles. Sessions cover what came up that day. Owners rarely walk away with something specific — built from their own numbers — they'll actually follow.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- WHAT THEY WISH THEY HAD -->
+<!-- SOLUTION -->
 <section id="solution-intro">
-  <div class="sol-intro-inner">
-    <span class="eye teal-d">What Cash Compass gives you</span>
-    <h2 class="sh">A ready-to-run program your team can hand to an owner and know it will work — without you in the room.</h2>
-    <p class="sp">You're managing 50–150 businesses with a small team. Cash Compass is infrastructure — something that runs on behalf of your organization at scale, produces documented outcomes for every participant, and gives your advisors a foundation instead of a blank page.</p>
-
+  <div class="inner">
+    <span class="eye td">What Cash Compass gives you</span>
+    <h2 class="sh">A program your team can hand to an owner and know it will work — without you in the room.</h2>
+    <p class="sp">You're managing 50–150 businesses with a small team. Cash Compass runs on behalf of your organization at scale, produces documented outcomes for every participant, and gives your advisors a foundation instead of a blank page.</p>
     <div class="answer-box">
       <div>
         <h3>What your organization gets out of <em>Cash Compass</em></h3>
-        <p>A fundable, scalable, deployable program that produces concrete outcomes you can report. Not "we ran a workshop" — but "37 business owners completed an analysis and walked away with a documented action plan."</p>
-        <p>That distinction matters enormously for funder reporting, and it's a real pain point for every organization doing this work.</p>
+        <p>A fundable, deployable program that produces concrete outcomes you can report. Not "we ran a workshop" — but "37 business owners completed an analysis and walked away with a documented action plan." That distinction matters enormously for funder reporting.</p>
       </div>
       <ul class="answer-bullets">
         <li>A financial baseline on every business owner who goes through it</li>
-        <li>Documented action plans you can track and report at the cohort level</li>
+        <li>Documented action plans reportable at the cohort level</li>
         <li>Advisors who walk in already knowing the situation</li>
-        <li>Business owners who arrive at lending conversations with organized financials and a plan</li>
-        <li>Something you can hand off that runs without you in the room</li>
+        <li>Business owners loan-ready before the lending conversation starts</li>
+        <li>Something that runs without you in the room</li>
       </ul>
     </div>
   </div>
@@ -338,162 +263,123 @@
 
 <!-- AUDIT -->
 <section id="audit" class="phase-section">
-  <div class="phase-inner">
+  <div class="inner">
     <div class="phase-header">
       <div class="phase-pill">Phase 01</div>
       <div class="phase-title">Audit</div>
     </div>
     <p class="phase-tagline">Business owners connect their accounts and get a complete financial picture — many for the first time.</p>
     <div class="phase-rule"></div>
-    <p class="phase-body">Business owners link their accounts to Ned. Ned pulls up to 24 months of transaction history, categorizes every dollar, and produces a clean financial baseline — automatically, in under 10 minutes. No manual entry, no spreadsheets. Every business in your program now has an organized financial picture that didn't exist before.</p>
-    <p class="phase-sub">What this covers</p>
+    <p class="phase-body">Business owners link their accounts to Ned. Ned pulls up to 24 months of transaction history, categorizes every dollar, and produces a clean financial baseline automatically — in under 10 minutes. Every business in your program now has an organized financial picture that didn't exist before.</p>
     <ul class="feat-grid">
       <li>Secure bank account connection</li>
       <li>Automatic revenue and expense categorization</li>
       <li>Unified view across all accounts and payment methods</li>
       <li>Up to 24 months of transaction history</li>
       <li>Real-time sync as financials change</li>
-      <li>Custom category rules per business</li>
-      <li>Duplicate detection and data cleaning</li>
       <li>Instant summary dashboard on completion</li>
     </ul>
     <div class="callout-row">
-      <div class="callout"><h4>Completed in under 10 minutes</h4><p>Low barrier for business owners. High completion rate for your program.</p></div>
-      <div class="callout"><h4>No manual entry</h4><p>Data imports and categorizes automatically. Owners review — they don't input.</p></div>
+      <div class="callout"><h4>Under 10 minutes</h4><p>Low barrier for owners. High completion rate for your program.</p></div>
+      <div class="callout"><h4>No manual entry</h4><p>Data imports and categorizes automatically.</p></div>
       <div class="callout"><h4>Read-only access</h4><p>Ned can view transactions. It cannot move or modify funds.</p></div>
     </div>
     <div class="advisor-note">
       <div class="advisor-note-dot"></div>
-      <p>For your organization: every business owner who completes the Audit arrives at their next advising session with a documented financial baseline. Your advisors walk in already knowing the business. That changes the whole conversation.</p>
+      <p>For your organization: every business owner who completes the Audit arrives at their next advising session with a documented financial baseline. Your advisors walk in already knowing the business.</p>
     </div>
   </div>
 </section>
 
 <!-- ANALYZE -->
 <section id="analyze" class="phase-section alt">
-  <div class="phase-inner">
+  <div class="inner">
     <div class="phase-header">
       <div class="phase-pill">Phase 02</div>
       <div class="phase-title">Analyze</div>
     </div>
-    <p class="phase-tagline">Ned interprets the data. Business owners understand their numbers — in plain language, without an advisor in the room.</p>
+    <p class="phase-tagline">Ned interprets the data. Business owners understand their numbers in plain language — without an advisor in the room.</p>
     <div class="phase-rule"></div>
-    <p class="phase-body">Cash Compass provides the interpretation layer on top of Ned's analysis. For every metric and data point the analysis surfaces, the field guide tells the owner what it is, what it means for their business specifically, what healthy looks like versus what's a warning sign, and what questions to ask themselves. This is not generic financial education. It's contextual, diagnostic guidance tied directly to what their own data showed.</p>
-    <p class="phase-sub">What Ned surfaces for each business owner</p>
+    <p class="phase-body">Cash Compass provides the interpretation layer on top of Ned's analysis. For every metric, the field guide explains what it is, what healthy looks like versus a warning sign, and what questions the owner should ask themselves. Contextual and diagnostic — not generic financial education.</p>
     <ul class="feat-grid">
       <li>Revenue trends over 3, 6, and 12-month windows</li>
-      <li>Expense breakdowns by category, vendor, and period</li>
+      <li>Expense breakdowns by category and vendor</li>
       <li>Profit margin by product or service line</li>
       <li>Cash flow forecasting before shortfalls become crises</li>
-      <li>Month-over-month and year-over-year comparisons</li>
       <li>Automated anomaly and trend detection</li>
       <li>Industry benchmarking against similar businesses</li>
-      <li>Revenue concentration and customer risk flags</li>
     </ul>
     <div class="callout-row">
-      <div class="callout"><h4>Plain-language explanations</h4><p>Every metric comes with a plain-English explanation. No financial background required.</p></div>
-      <div class="callout"><h4>Diagnostic, not generic</h4><p>Guidance is tied to what the owner's own data actually showed — not a standard curriculum.</p></div>
-      <div class="callout"><h4>Exportable for advising</h4><p>Business owners can share their full analysis with your advisors in one click.</p></div>
+      <div class="callout"><h4>Plain-language explanations</h4><p>No financial background required.</p></div>
+      <div class="callout"><h4>Diagnostic, not generic</h4><p>Tied to what each owner's own data showed.</p></div>
+      <div class="callout"><h4>Exportable for advising</h4><p>Share the full analysis with your advisors in one click.</p></div>
     </div>
     <div class="advisor-note">
       <div class="advisor-note-dot"></div>
-      <p>For your organization: business owners show up to advising sessions already knowing their numbers. Your advisors skip the diagnostic work entirely and focus on the highest-value conversation instead.</p>
+      <p>For your organization: business owners show up to advising sessions already knowing their numbers. Your advisors skip the diagnostic work and go straight to the highest-value conversation.</p>
     </div>
   </div>
 </section>
 
 <!-- EXECUTE -->
 <section id="execute" class="phase-section">
-  <div class="phase-inner">
+  <div class="inner">
     <div class="phase-header">
       <div class="phase-pill">Phase 03</div>
       <div class="phase-title">Execute</div>
     </div>
     <p class="phase-tagline">Every business owner walks away with a specific, personalized action plan — built from their own numbers.</p>
     <div class="phase-rule"></div>
-    <p class="phase-body">Based on the patterns in each business owner's data, Cash Compass generates a tailored set of resources and prioritized next steps — specific enough to act on this week, tied to what the analysis actually flagged. This is the deliverable. Every participant who completes Cash Compass walks away with something documented and actionable that your organization can track, report, and build on in future sessions.</p>
-    <p class="phase-sub">What each action plan includes</p>
+    <p class="phase-body">Based on each business owner's data, Cash Compass generates prioritized next steps specific to their situation — concrete enough to act on this week. This is the deliverable. Every participant who completes Cash Compass leaves with something documented and actionable your organization can track and build on.</p>
     <ul class="feat-grid">
       <li>Recommendations drawn from their actual data patterns</li>
-      <li>Resources for cost reduction, revenue growth, and cash flow</li>
       <li>Action items ranked by estimated impact</li>
-      <li>Tools and templates matched to their specific challenge</li>
+      <li>Resources matched to their specific challenge</li>
       <li>Progress tracking as financials evolve</li>
       <li>Monthly updates as the business changes</li>
-      <li>Scenario planning for growth, hiring, or downturns</li>
       <li>Pathways for deeper advising when needed</li>
     </ul>
     <div class="callout-row">
-      <div class="callout"><h4>Data-driven, not generic</h4><p>Every recommendation comes from that business owner's numbers — not a standard checklist.</p></div>
-      <div class="callout"><h4>Specific enough to act on</h4><p>Not "improve cash flow management." Concrete enough to do this week.</p></div>
-      <div class="callout"><h4>Your advisors pick up here</h4><p>The plan is the starting point for deeper work — not a replacement for your team.</p></div>
+      <div class="callout"><h4>Data-driven, not generic</h4><p>Every recommendation comes from that owner's numbers.</p></div>
+      <div class="callout"><h4>Specific enough to act on</h4><p>Not "improve cash flow." Concrete enough for this week.</p></div>
+      <div class="callout"><h4>Your advisors pick up here</h4><p>The plan is the starting point — not a replacement for your team.</p></div>
     </div>
     <div class="advisor-note">
       <div class="advisor-note-dot"></div>
-      <p>For your organization: every completed Cash Compass session produces a documented action plan. That's the outcome you report to funders — not hours of TA, but evidence of what actually changed.</p>
+      <p>For your organization: every completed Cash Compass session produces a documented action plan — the outcome you report to funders, not hours of TA.</p>
     </div>
   </div>
 </section>
 
-<!-- WHY PARTNER -->
+<!-- VALUE -->
 <section id="value">
-  <div class="val-inner">
-    <span class="eye teal-d">Why organizations partner with Cash Compass</span>
+  <div class="inner">
+    <span class="eye td">Why organizations partner with Cash Compass</span>
     <h2 class="sh">This is about impact.<br>We're looking for the right organizations to work with.</h2>
-    <p class="sp">We're talking to people who work in community development and have seen a lot of overpromised tools. So we'll be direct: Cash Compass is worth your time if your organization needs documented outcomes, wants to stretch your advising capacity, and serves business owners who don't have access to quality financial guidance anywhere else.</p>
+    <p class="sp">We're talking to people who have seen a lot of overpromised tools. Cash Compass is worth your time if you need documented outcomes, want to stretch your advising capacity, and serve business owners who don't have access to quality financial guidance anywhere else.</p>
 
     <div class="benefit-grid">
-      <div class="benefit-card">
-        <h4>Give your funders something concrete to point to</h4>
-        <p>Every business owner who completes Cash Compass has a documented financial baseline and a specific action plan. That's a reportable outcome — not hours-of-TA, but evidence of what actually changed. It's designed for funder reporting from the ground up.</p>
-      </div>
-      <div class="benefit-card">
-        <h4>It fits into what you're already doing</h4>
-        <p>Cash Compass doesn't require you to rebuild your programs. Run it as part of a cohort, plug it into one-on-one advising, or offer it as a standalone resource. It works in any format without requiring your staff to become financial experts.</p>
-      </div>
-      <div class="benefit-card">
-        <h4>Your advisors show up already knowing the situation</h4>
-        <p>When business owners arrive having completed the Audit and Analyze phases, your advisors skip the diagnostic work entirely. They already know where the business stands — and can spend their time on the conversation that actually matters.</p>
-      </div>
-      <div class="benefit-card">
-        <h4>Owners remember who gave them direction</h4>
-        <p>For many business owners, Cash Compass will be the first time they've ever had real financial clarity about their own business. That moment of clarity is associated with your organization. It builds the kind of trust that lasts.</p>
-      </div>
-      <div class="benefit-card">
-        <h4>Accelerate loan-readiness across your portfolio</h4>
-        <p>Business owners who complete Cash Compass arrive at lending conversations with organized financials, clear performance data, and a documented plan. For CDFIs and community lenders, that's a materially different conversation — and a shorter path to a decision.</p>
-      </div>
-      <div class="benefit-card">
-        <h4>Scale your impact without scaling your team</h4>
-        <p>Cash Compass runs without an advisor in the room. One program manager can deploy it across an entire cohort. The guide does the interpretation work so your team can focus on the business owners who need the most support.</p>
-      </div>
+      <div class="benefit-card"><h4>Give your funders something concrete to point to</h4><p>Every business owner who completes Cash Compass has a documented financial baseline and a specific action plan. Designed for funder reporting from the ground up.</p></div>
+      <div class="benefit-card"><h4>It fits into what you're already doing</h4><p>Run it as a cohort, plug it into one-on-one advising, or offer it as a standalone resource — without requiring your staff to become financial experts.</p></div>
+      <div class="benefit-card"><h4>Your advisors show up already knowing the situation</h4><p>When owners arrive having completed the Audit and Analyze phases, your advisors skip the diagnostic work entirely.</p></div>
+      <div class="benefit-card"><h4>Owners remember who gave them direction</h4><p>For many, Cash Compass will be the first time they've had real financial clarity. That moment is associated with your organization.</p></div>
+      <div class="benefit-card"><h4>Accelerate loan-readiness across your portfolio</h4><p>Business owners arrive at lending conversations with organized financials, clear performance data, and a documented plan. A materially different conversation for CDFIs.</p></div>
+      <div class="benefit-card"><h4>Scale your impact without scaling your team</h4><p>Cash Compass runs without an advisor in the room. One program manager can deploy it across an entire cohort.</p></div>
     </div>
 
-    <p class="ops-section-label">How your organization operates with Cash Compass</p>
-    <div class="ops-grid" style="margin-bottom:48px;">
-      <div class="ops-card">
-        <span class="ops-label">Option A</span>
-        <h4>Embed in a cohort program</h4>
-        <p>Walk a group of business owners through all three phases together. Cash Compass handles the analysis and interpretation — your advisors facilitate, provide context, and build on each participant's personalized plan.</p>
-      </div>
-      <div class="ops-card">
-        <span class="ops-label">Option B</span>
-        <h4>Integrate with one-on-one advising</h4>
-        <p>Have business owners complete the Audit and Analyze phases before their first session. Your advisors start every engagement already knowing the business — no diagnostic work, no starting from scratch.</p>
-      </div>
-      <div class="ops-card">
-        <span class="ops-label">Option C</span>
-        <h4>Offer as a standalone resource</h4>
-        <p>Give business owners in your network access to Cash Compass as a self-paced tool. They get the full program and a personalized plan. Your organization gets a documented outcome for every participant.</p>
-      </div>
+    <p class="ops-label-text">How your organization operates with Cash Compass</p>
+    <div class="ops-grid">
+      <div class="ops-card"><span class="ops-tag">Option A</span><h4>Embed in a cohort</h4><p>Walk a group through all three phases together. Cash Compass handles analysis and interpretation — your advisors facilitate and build on each participant's plan.</p></div>
+      <div class="ops-card"><span class="ops-tag">Option B</span><h4>Integrate with 1:1 advising</h4><p>Have owners complete Audit and Analyze before their first session. Your advisors start every engagement already knowing the business.</p></div>
+      <div class="ops-card"><span class="ops-tag">Option C</span><h4>Offer as a standalone resource</h4><p>Give owners self-paced access. They get the full program and a personalized plan. Your organization gets a documented outcome for every participant.</p></div>
     </div>
 
     <div class="who-box">
-      <span class="eye teal-l">Organizations we work with</span>
+      <span class="eye tl">Organizations we work with</span>
       <p>We're looking for mission-driven organizations whose work touches small business financial health. If that's your mission, we'd like to talk.</p>
       <div class="who-tags">
-        <div class="who-tag highlight">Community Foundations</div>
-        <div class="who-tag highlight">Philanthropic Program Officers</div>
+        <div class="who-tag hl">Community Foundations</div>
+        <div class="who-tag hl">Philanthropic Program Officers</div>
         <div class="who-tag">CDFIs</div>
         <div class="who-tag">Small Business Development Centers</div>
         <div class="who-tag">Chambers of Commerce</div>
@@ -507,56 +393,34 @@
   </div>
 </section>
 
-<!-- CLIENT FIT -->
-<section id="fit">
-  <div class="fit-inner">
-    <span class="eye teal-d">Who Cash Compass is built for</span>
-    <h2 class="sh">The business owners in your community</h2>
-    <p class="sp">Cash Compass works for the operators your organization already serves — running day-to-day without a finance team, making decisions without data, and needing real guidance rather than more general information.</p>
-    <div class="fit-grid">
-      <div class="fit-card"><h4>Service businesses</h4><p>Contractors, consultants, cleaners, landscapers — managing variable income and unpredictable expenses month to month.</p></div>
-      <div class="fit-card"><h4>Retail & food</h4><p>Storefronts, restaurants, food trucks, and e-commerce sellers dealing with inventory, margins, and seasonal swings.</p></div>
-      <div class="fit-card"><h4>Solopreneurs</h4><p>One-person operations where the owner handles everything — including trying to stay on top of the finances.</p></div>
-      <div class="fit-card"><h4>Early-stage businesses</h4><p>Businesses in their first 1–5 years that haven't yet built financial habits or systems that work.</p></div>
-      <div class="fit-card"><h4>Businesses under pressure</h4><p>Owners who've noticed revenue slipping, costs rising, or cash getting tight — and need a clear path forward now.</p></div>
-      <div class="fit-card"><h4>Loan-readiness candidates</h4><p>Owners preparing to pursue financing who need organized financials, clean data, and a documented plan before the conversation starts.</p></div>
-    </div>
-  </div>
-</section>
-
 <!-- FAQ -->
 <section id="faq">
   <div class="faq-inner">
-    <span class="eye teal-d">Common questions</span>
+    <span class="eye td">Common questions</span>
     <h2 class="sh">FAQ</h2>
-
     <div class="faq-item">
       <div class="faq-q">How does Cash Compass fit into our existing programs? <span class="chevron">&#8964;</span></div>
-      <div class="faq-a">Cash Compass is designed to slot into whatever format you already use — cohorts, one-on-one advising, workshops, or self-paced access. We work with each partner organization to figure out the integration that makes sense for your community and program structure. There's no requirement to rebuild what you're already doing.</div>
+      <div class="faq-a">It slots into whatever format you already use — cohorts, one-on-one advising, or self-paced access. We work with each partner to figure out the integration that makes sense. No requirement to rebuild what you're already doing.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q">How does this work as a philanthropic program? <span class="chevron">&#8964;</span></div>
-      <div class="faq-a">A philanthropy or community foundation funds access to Cash Compass for their grantee network — delivered at no cost to the partner organizations or business owners in that network. Cash Compass runs as the program infrastructure. Outcomes data flows back to the funder for reporting. We work with each funder to define what success looks like in their specific portfolio and how they want to measure it.</div>
+      <div class="faq-a">A philanthropy or foundation funds access for their grantee network — delivered at no cost to partner organizations or business owners. Cash Compass runs as the program infrastructure. Outcomes data flows back to the funder. We work with each funder to define what success looks like in their portfolio.</div>
     </div>
     <div class="faq-item">
-      <div class="faq-q">What does reporting look like at the portfolio or cohort level? <span class="chevron">&#8964;</span></div>
-      <div class="faq-a">Partner organizations receive cohort-level completion data, financial baseline summaries, and action plan outputs across their business owner population. This data is designed for funder reporting, program evaluation, and advising prioritization — so you can see which business owners need the most attention and show your funders what actually changed.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">What does partnering with Cash Compass involve? <span class="chevron">&#8964;</span></div>
-      <div class="faq-a">Cash Compass is offered to business owners through partner organizations at no direct cost to the business owner. For partner organizations and philanthropic funders, we work through a deployment model based on your network size and program structure. Reach out and we'll walk you through what the partnership looks like in practice — no commitment required.</div>
+      <div class="faq-q">What does reporting look like at the cohort level? <span class="chevron">&#8964;</span></div>
+      <div class="faq-a">Partner organizations receive cohort-level completion data, financial baseline summaries, and action plan outputs across their business owner population — designed for funder reporting, program evaluation, and advising prioritization.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q">How much time does the program take for business owners? <span class="chevron">&#8964;</span></div>
-      <div class="faq-a">Most business owners complete all three phases in under two hours total. The Audit takes under 10 minutes. The Analyze phase — reviewing the Cash Compass field guide for their specific metrics — typically takes 30–45 minutes. The Execute phase is ongoing: action plans update monthly as the business changes, making it a continuous resource rather than a one-time exercise.</div>
+      <div class="faq-a">Most complete all three phases in under two hours. The Audit takes under 10 minutes. Analyze typically takes 30–45 minutes. Execute is ongoing — action plans update monthly as the business changes.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q">Do business owners need any financial background? <span class="chevron">&#8964;</span></div>
-      <div class="faq-a">No — and that's the whole point. Cash Compass is written specifically for business owners who are not financial professionals. Every metric is explained in plain language. Every recommendation is specific enough to act on without an advisor translating it. Your advisors are there for support and deeper work — not to interpret the basics.</div>
+      <div class="faq-a">No. Cash Compass is written specifically for owners who are not financial professionals. Every metric is explained in plain language, specific enough to act on without an advisor translating it.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q">Is business owner financial data secure? <span class="chevron">&#8964;</span></div>
-      <div class="faq-a">Yes. Ned uses read-only bank connections — we can view transaction history but cannot move, modify, or access funds. Business owner data is never sold or shared with third parties, advertisers, or your organization without the owner's explicit consent.</div>
+      <div class="faq-a">Yes. Ned uses read-only bank connections — we can view transaction history but cannot move or modify funds. Business owner data is never sold or shared without the owner's explicit consent.</div>
     </div>
   </div>
 </section>
@@ -564,20 +428,22 @@
 <!-- CTA -->
 <section id="cta">
   <div class="cta-inner">
-  <div class="cta-eye">Get in touch</div>
-  <h2>Tell us about your network.</h2>
-  <p>We'll walk you through deployment, the business owner experience, and what reporting looks like at scale — no commitment required.</p>
-  <form class="email-form" onsubmit="return false;">
-    <input type="email" placeholder="Enter your work email" />
-    <button type="submit" class="btn">Let's Talk</button>
-  </form>
-  <p class="cta-note">We'll follow up within one business day.</p>
+    <div class="cta-eye">Get in touch</div>
+    <h2>Tell us about your network.</h2>
+    <p>We'll walk you through deployment, the owner experience, and what reporting looks like at scale — no commitment required.</p>
+    <form class="email-form" onsubmit="return false;">
+      <input type="email" placeholder="Enter your work email" />
+      <button type="submit" class="btn">Let's Talk</button>
+    </form>
+    <p class="cta-note">We'll follow up within one business day.</p>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
-  <div class="logo"><span class="logo-main">Cash Compass by Ned</span><span class="logo-sub">A community partner program</span></div>
+  <div class="footer-logo">
+    <span class="footer-logo-main">Cash Compass by Ned</span>
+    <span class="footer-logo-sub">A community partner program</span>
+  </div>
   <p>© 2026 Ned. All rights reserved.</p>
 </footer>
 
